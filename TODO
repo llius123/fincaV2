@@ -1,0 +1,31 @@
+
+Todo:
+
+  ☐ Mirar
+    ☐ https://ng-bootstrap.github.io/#/home
+    
+  ☐ Loggin:
+    ☐ Frontend loggin
+    ☐ Backend loggin
+
+  ☐ Base de datos:
+    ✔ Construir base de datos @done(18-08-23 22:46)
+
+  ✔ Paquetes npm para instalar @done(18-08-23 19:47)
+    ✔ mysql @done(18-08-23 19:11)
+    ✔ body-parser @done(18-08-23 19:20)
+    ✔ express @done(18-08-23 19:11)
+    ✔ nodemon @done(18-08-23 19:20)
+    ✔ npm-run-all @done(18-08-23 19:20)
+    ✔ cors @done(18-08-23 19:20)
+    ✔ jquery @done(18-08-23 19:21)
+    ✔ toastr @done(18-08-23 22:35)
+      Libreria que añade box alerts 
+      +info: https://github.com/scttcper/ngx-toastr
+      Crear las alertas online https://scttcper.github.io/ngx-toastr/
+
+  ✔ Css: @done(18-08-23 19:47)
+    ✔ Font Awesome (https://fontawesome.com/) @done(18-08-23 19:28)
+    ✔ Bulma.io (https://bulma.io/documentation/) @done(18-08-23 19:39)
+    ✔ Hover css (http://ianlunn.github.io/Hover/) @done(18-08-23 19:46)
+    ✔ Top 10 librerias css (https://www.webdesigndegreecenter.org/ten-best-css-libraries-developers-designers/) @done(18-08-23 22:34)

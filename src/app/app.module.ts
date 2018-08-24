@@ -1,16 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { HttpClientModule } from "@angular/common/http"
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppComponent } from './app.component';
+import { LogginComponent } from './loggin/loggin.component';
+import { AppRoute } from './app.route';
+import { SqlQuerys } from "./sql/sql.loggin.service";
+import { ModeloLoggin } from "./models/loggin.model";
+import { PanelUsuarioComponent } from './panel-usuario/panel-usuario.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogginComponent,
+    PanelUsuarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    HttpClientModule,
+    AppRoute,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [SqlQuerys,ModeloLoggin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

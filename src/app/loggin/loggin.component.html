@@ -1,0 +1,73 @@
+<div class="columns">
+  <div class="column">
+    <i class="far fa-building fa-7x" id="icono">
+      <h1 class="title is-1" id="titulo">FincaV2</h1>
+    </i>
+  </div>
+</div>
+<div class="container" id="loggin">
+  <form [formGroup]="logginForm">
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input hvr-input-inicio" type="text" placeholder="Usuario" formControlName="user" #usuario>
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </p>
+      <div class="box-error-usuario" *ngIf="!logginForm.get('user').valid && logginForm.get('user').touched">
+        <article class="media">
+          <div class="media-left">
+            <i class="fas fa-exclamation" style="color: red"></i>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>Usuario no puede estar vacio</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="field">
+      <p class="control has-icons-left">
+        <input class="input hvr-input-inicio" type="password" placeholder="Contraseña" formControlName="pass">
+        <span class="icon is-small is-left">
+          <i class="fas fa-key"></i>
+        </span>
+      </p>
+      <div class="box-error-usuario" *ngIf="!logginForm.get('pass').valid && logginForm.get('pass').touched">
+        <article class="media">
+          <div class="media-left">
+            <i class="fas fa-exclamation" style="color: red"></i>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>Usuario no puede estar vacio</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="box-error-usuario" *ngIf="errorLoggin">
+        <article class="media">
+          <div class="media-left">
+            <i class="fas fa-exclamation" style="color: red"></i>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>Usuario o Contraseña erroneos</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    <div class="field">
+      <p class="control" id="botones">
+        <button class="button is-light is-medium hvr-botones-inicio" id="iniciarSesion" (click)="iniciarSesion()" [disabled]="!logginForm.valid">
+          Iniciar sesion
+        </button>
+        <button class="button is-light is-medium hvr-botones-inicio" id="recuperarPass">
+          Recuperar contraseña
+        </button>
+      </p>
+    </div>
+  </form>
+</div>
