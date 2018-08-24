@@ -5,11 +5,18 @@ Todo:
     ☐ https://ng-bootstrap.github.io/#/home
     
   ☐ Loggin:
-    ☐ Frontend loggin
+    ✔ Frontend loggin @done(18-08-24 11:23)
     ☐ Backend loggin
+      ✔ Pasar de la pagina loggin @done(18-08-24 11:24)
+      ☐ Hacer el backup donde guarde los datos del usuario logeado
+
+  ☐ Panel-Personal:
+    ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
+    ☐ Rellenar cada componente 
 
   ☐ Base de datos:
     ✔ Construir base de datos @done(18-08-23 22:46)
+    ☐ Hacer mejoras
 
   ✔ Paquetes npm para instalar @done(18-08-23 19:47)
     ✔ mysql @done(18-08-23 19:11)

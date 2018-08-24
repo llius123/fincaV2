@@ -1,3 +1,51 @@
-<p>
-  panel-usuario works!
-</p>
+<div class="columns">
+  <div class="column">
+    <div id="columnaIcono">
+      <a>
+        <i class="far fa-building" id="columnaIcono2"></i>
+        <h1 id="titulo">FincaV2</h1>
+      </a>
+    </div>
+  </div>
+  <div class="column is-11">
+    <div class="tabs is-centered is-medium" style="width: 100%">
+      <ul>
+        <li id="marginLI">
+          <div (click)="actas()">
+            <a>
+              <i class="fas fa-book-open" id="icono"></i>
+              Actas
+            </a>
+          </div>
+        </li>
+        <li id="marginLI">
+          <div (click)="facturas()">
+            <a>
+              <i class="fas fa-file-invoice-dollar" id="icono"></i>
+              Facturas
+            </a>
+          </div>
+        </li>
+        <li id="marginLI">
+          <div (click)="incidencias()">
+            <a>
+              <i class="fas fa-exclamation-circle" id="icono"></i>
+              Incidencias
+            </a>
+          </div>
+        </li>
+        <li id="marginLI">
+          <div (click)="panel_personal()">
+            <a>
+              <i class="fas fa-user" id="icono"></i>
+              Panel Personal
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

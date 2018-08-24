@@ -1,0 +1,24 @@
+#columnaIcono{
+    align-items: center;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1px;
+    padding: 0.5em 1em;
+    vertical-align: top;
+    color: black;
+    font-size: 18px;;
+}
+#columnaIcono2{
+    color: black;
+    margin-left: 41%;
+}
+
+#icono{
+    margin-right: 17px;
+    
+}
+#titulo {
+    font-family: 'Merriweather', serif;
+    color: black;
+}

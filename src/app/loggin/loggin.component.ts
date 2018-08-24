@@ -32,10 +32,18 @@ export class LogginComponent implements OnInit {
       pass: new FormControl(null, [Validators.required])
     });
   }
+  autologin(){
+    this.sqlQuerys.loggin('test','test')
+    .pipe(map(
+      (data) => {
+          this.validarDatos(data)
+      })).subscribe()
+  }
 
   iniciarSesion() {
     this.modelo.usuario = this.logginForm.get('user').value;
     this.modelo.contraseña = this.logginForm.get('pass').value;
+
     this.sqlQuerys.loggin(this.modelo.usuario, this.modelo.contraseña)
       .pipe(map(
         (data) => {
