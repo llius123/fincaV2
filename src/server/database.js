@@ -29,3 +29,4 @@ app.get("/", function (req, res) {
 
 //USUARIO
 usuario.loggin(app);
+usuario.actualizarUsuario(app);

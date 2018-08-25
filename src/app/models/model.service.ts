@@ -17,6 +17,5 @@ export class ModeloUsuario {
         public usuario: string,
         public contrasenya: string,
         public tipo_id: number
-    ) {
-    }
+    ) {}
 }

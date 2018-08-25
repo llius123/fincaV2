@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { UsuarioLoggeado } from '../models/usuarioLoggeado.service';
 
 @Component({
   selector: 'app-panel-usuario',
@@ -8,9 +9,16 @@ import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 })
 export class PanelUsuarioComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private backUp: UsuarioLoggeado) { }
 
   ngOnInit() {
+    this.estaLogeado();
+  }
+
+  estaLogeado(){
+    if(this.backUp.loggeado() === false){
+      this.router.navigate(['login']);
+    }
   }
 
   actas() {

@@ -1,0 +1,67 @@
+<div class="columns">
+  <div class="column is-one-third" style="margin: auto">
+    <form [formGroup]="formularioUsuario">
+      <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control has-icons-left has-icons-right ">
+          <input class="input is-medium" type="text" formControlName="nombre" [ngStyle]="{'border-color': !formularioUsuario.get('nombre').touched ? true : formBorderColorValidator('nombre')}">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user-circle"></i>
+          </span>
+        </div>
+        <p class="help is-danger" *ngIf="!formularioUsuario.get('nombre').valid">El nombre no puede estar en blanco</p>
+      </div>
+      <div class="field">
+        <label class="label">Telefono</label>
+        <div class="control has-icons-left has-icons-right ">
+          <input class="input is-medium" type="text" formControlName="telefono" [ngStyle]="{'border-color': !formularioUsuario.get('telefono').touched ? true : formBorderColorValidator('telefono')}">
+          <span class="icon is-small is-left">
+            <i class="fas fa-phone"></i>
+          </span>
+        </div>
+        <p class="help is-danger" *ngIf="!formularioUsuario.get('telefono').valid">El telefono no puede estar en blanco</p>
+      </div>
+      <div class="field">
+        <label class="label">Puerta</label>
+        <div class="control has-icons-left has-icons-right ">
+          <input class="input is-medium" type="text" formControlName="puerta" [ngStyle]="{'border-color': !formularioUsuario.get('puerta').touched ? true : formBorderColorValidator('puerta')}">
+          <span class="icon is-small is-left">
+            <i class="fas fa-door-closed"></i>
+          </span>
+        </div>
+        <p class="help is-danger" *ngIf="!formularioUsuario.get('puerta').valid">La puerta no puede estar en blanco</p>
+      </div>
+      <div class="field">
+        <label class="label">Usuario</label>
+        <div class="control has-icons-left has-icons-right ">
+          <input class="input is-medium" type="text" formControlName="usuario" [ngStyle]="{'border-color': !formularioUsuario.get('usuario').touched ? true : formBorderColorValidator('usuario')}">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
+        <p class="help is-danger" *ngIf="!formularioUsuario.get('usuario').valid">El usuario no puede estar en blanco</p>
+      </div>
+      <div class="field">
+        <label class="label">Contraseña</label>
+        <div class="control has-icons-left has-icons-right ">
+          <input class="input is-medium" type="password" formControlName="contrasenya" [ngStyle]="{'border-color': !formularioUsuario.get('contrasenya').touched ? true : formBorderColorValidator('contrasenya')}">
+          <span class="icon is-small is-left">
+            <i class="fas fa-key"></i>
+          </span>
+        </div>
+        <p class="help is-danger" *ngIf="!formularioUsuario.get('contrasenya').valid">La contraseña no puede estar en blanco</p>
+      </div>
+      <div class="field">
+        <p class="control" id="botones">
+          <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario" id="actualizar" (click)="actualizar()"
+            [disabled]="!formularioUsuario.valid">
+            Actualizar datos
+          </button>
+          <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario-cancelar" id="cancelar" (click)="cancelar()">
+            Cancelar
+          </button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

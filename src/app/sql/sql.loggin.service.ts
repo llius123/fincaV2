@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 
-import { ModeloUsuario } from '../models/loggin.model'
-import { map } from "../../../node_modules/rxjs/operators";
+import { ModeloUsuario } from '../models/model.service'
+import { map } from "rxjs/operators";
 
 @Injectable()
 export class SqlQuerys {
@@ -33,5 +33,10 @@ export class SqlQuerys {
                     return null;
                 }
             }))
+    }
+
+    actualizarUsuario(usuario: ModeloUsuario) {
+        this.url = `${this.api}/actualizarUsuario/${usuario.id}/${usuario.nombre}/${usuario.telefono}/${usuario.puerta}/${usuario.usuario}/${usuario.contrasenya}/${usuario.tipo_id}`;
+        return this.http.put(this.url, usuario);
     }
 }

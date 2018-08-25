@@ -1,8 +1,8 @@
 var exports = module.exports = {};
 const connection = require("../connection");
 
-exports.loggin = function(app){
-app.get("/loggin/:usu/:pass", function (req, res) {
+exports.loggin = function (app) {
+  app.get("/loggin/:usu/:pass", function (req, res) {
     connection.query(
       "select * from usuario where usuario=? and contrasenya=?",
       [req.params.usu, req.params.pass],
@@ -12,4 +12,19 @@ app.get("/loggin/:usu/:pass", function (req, res) {
       }
     );
   });
+}
+
+//Actualizar usuario 
+
+exports.actualizarUsuario = function (app) {
+  app.put("/actualizarUsuario/:id/:nombre/:telefono/:puerta/:usuario/:contrasenya/:tipo_id", function (req, res) {
+    connection.query(
+      "update usuario  set nombre = ?, telefono = ?, puerta = ?, tipo_id = ?, usuario = ?, contrasenya = ? where id = ? ",
+      [req.params.nombre,req.params.telefono,req.params.puerta,req.params.tipo_id,req.params.usuario,req.params.contrasenya,req.params.id],
+      function (error, result){
+        if (error) console.log(error);
+        res.end(res.json(result));
+      }
+    )
+  })
 }

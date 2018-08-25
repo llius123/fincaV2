@@ -5,7 +5,8 @@ import { PanelUsuarioComponent } from './panel-usuario/panel-usuario.component';
 import { ActasComponent } from './actas/actas.component';
 import { FacturaComponent } from './factura/factura.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
-import { PersonalComponent } from './personal/personal.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+
 
 
 const appRoutes: Routes = [
@@ -16,7 +17,7 @@ const appRoutes: Routes = [
             { path: 'actas', component: ActasComponent },
             { path: 'facturas', component: FacturaComponent },
             { path: 'incidencias', component: IncidenciasComponent },
-            { path: 'panel_personal', component: PersonalComponent }
+            { path: 'panel_personal', component: UsuarioComponent }
         ]
     },
     { path: "**", redirectTo: "/login" }

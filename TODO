@@ -3,12 +3,23 @@ Todo:
 
   ☐ Mirar
     ☐ https://ng-bootstrap.github.io/#/home
-    
+  
+  ☐ Color general de la aplicacion:
+    ☐ #93e4ff
+
   ☐ Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
-    ☐ Backend loggin
+    ☐ Backend loggin:
       ✔ Pasar de la pagina loggin @done(18-08-24 11:24)
-      ☐ Hacer el backup donde guarde los datos del usuario logeado
+      ✔ Hacer el backup donde guarde los datos del usuario logeado @done(18-08-25 11:31)
+  
+  ☐ Componente Loggin:
+    ✔ Actualizar datos en la base de datos @done(18-08-25 15:31)
+    ✔ Actualizar el objeto general con los datos del usuario registrado @done(18-08-25 15:32)
+    ✔ Añadido css y ha quedado muy bonito @done(18-08-25 15:33)
+    ☐ Validaciones
+      ✔ No puede estar en blanco @done(18-08-25 15:32)
+      ☐ Añadir expresiones regulares
 
   ☐ Panel-Personal:
     ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
