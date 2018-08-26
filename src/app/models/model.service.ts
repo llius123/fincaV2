@@ -19,3 +19,14 @@ export class ModeloUsuario {
         public tipo_id: number
     ) {}
 }
+
+export class ModeloActas {
+    constructor(
+        public id: number,
+        public lugar: string,
+        public fecha: string,
+        public caracter_convocatorio: string,
+        public acuerdos_adoptados: string,
+        public propietarios_derecho_voto: string
+    ) {}
+}

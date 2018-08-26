@@ -5,6 +5,7 @@ import { FormGroup, Validators, FormControl } from '../../../node_modules/@angul
 import { SqlQuerys } from '../sql/sql.loggin.service';
 import { ToastrService } from '../../../node_modules/ngx-toastr';
 import { map } from '../../../node_modules/rxjs/operators';
+import { SqlUsuario } from '../sql/sql.usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -15,7 +16,7 @@ export class UsuarioComponent implements OnInit {
 
   formularioUsuario: FormGroup;
 
-  constructor(private backUp: UsuarioLoggeado, private sql: SqlQuerys, private toastr: ToastrService) { }
+  constructor(private backUp: UsuarioLoggeado, private sql: SqlQuerys, private toastr: ToastrService, private usuario: SqlUsuario) { }
 
   usuarioLoggeadoInfo: ModeloUsuario;
   actualizarUsuario: ModeloUsuario;
@@ -23,10 +24,13 @@ export class UsuarioComponent implements OnInit {
 
 
   ngOnInit() {
-    this.usuarioLoggeadoInfo = this.backUp.getUser();
+    this.guardarUsuarioLoggeado()
     this.loadFormulario();
   }
 
+  guardarUsuarioLoggeado() {
+    this.usuarioLoggeadoInfo = this.backUp.getUser();
+  }
   loadFormulario() {
     this.formularioUsuario = new FormGroup({
       nombre: new FormControl(this.usuarioLoggeadoInfo.nombre, [Validators.required]),
@@ -94,8 +98,23 @@ export class UsuarioComponent implements OnInit {
               "closeButton": true,
               "progressBar": true,
             });
+            this.usuario.usuarioId(this.usuarioLoggeadoInfo.id)
+              .pipe(
+                map((data) => {
+                  this.backUp.usuarioLoggeadoSave(data);
+                  this.guardarUsuarioLoggeado()
+                })
+              ).subscribe()
           }))
       .subscribe();
-    this.sql.loggin(this.formularioUsuario.get('usuario').value, this.formularioUsuario.get('contrasenya').value).subscribe();
+  }
+  cancelar() {
+    this.formularioUsuario.patchValue({
+      nombre: this.usuarioLoggeadoInfo.nombre,
+      telefono: this.usuarioLoggeadoInfo.telefono,
+      puerta: this.usuarioLoggeadoInfo.telefono,
+      usuario: this.usuarioLoggeadoInfo.usuario,
+      contrasenya: this.usuarioLoggeadoInfo.contrasenya
+    })
   }
 }

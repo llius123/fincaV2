@@ -28,3 +28,17 @@ exports.actualizarUsuario = function (app) {
     )
   })
 }
+
+//Buscar por id
+exports.usuarioId = function (app) {
+  app.get('/usuarioId/:id', function (req, res) {
+    connection.query(
+      "select * from usuario where id = ?",
+      [req.params.id],
+      function (error, result) {
+        if(error) throw error;
+        res.end(res.json(result))
+      }
+    );
+  });
+}

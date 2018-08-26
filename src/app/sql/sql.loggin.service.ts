@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 import { ModeloUsuario } from '../models/model.service'
 import { map } from "rxjs/operators";
@@ -17,7 +17,7 @@ export class SqlQuerys {
      *
      * @param {string} user
      * @param {string} password
-     * @returns
+     * @returns null o el usuario loggeado
      * @memberof SqlQuerys
      */
     loggin(user: string, password: string) {
@@ -35,6 +35,14 @@ export class SqlQuerys {
             }))
     }
 
+
+    /**
+     *
+     *
+     * @param {ModeloUsuario} usuario
+     * @returns nada, solo actualizo base de datos
+     * @memberof SqlQuerys
+     */
     actualizarUsuario(usuario: ModeloUsuario) {
         this.url = `${this.api}/actualizarUsuario/${usuario.id}/${usuario.nombre}/${usuario.telefono}/${usuario.puerta}/${usuario.usuario}/${usuario.contrasenya}/${usuario.tipo_id}`;
         return this.http.put(this.url, usuario);

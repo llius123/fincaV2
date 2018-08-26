@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { SqlActas } from '../sql/sql.actas.service';
+import { Subscription } from '../../../node_modules/rxjs';
+
 
 @Component({
   selector: 'app-actas',
@@ -7,9 +11,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sql: SqlActas) { }
 
-  ngOnInit() {
+  fechas = [];
+
+  todasActas: Subscription;
+
+  ngOnInit() {  
+    this.listarFechaActas();
   }
+
+
+  listarFechaActas() {
+    this.todasActas = this.sql.listaTodasActas()
+      .pipe(
+        map(actas => {
+          for (let a of actas) {
+            this.fechas.push({ id: a.id, fecha: a.fecha });
+          }
+        })
+      ).subscribe()
+  }
+
+
 
 }

@@ -19,6 +19,9 @@ import { FacturaComponent } from './factura/factura.component';
 import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { UsuarioLoggeado } from "./models/usuarioLoggeado.service";
 import { UsuarioComponent } from './usuario/usuario.component';
+import { SqlActas } from "./sql/sql.actas.service";
+import { SqlUsuario } from "./sql/sql.usuario.service";
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
     AppRoute,
     ToastrModule.forRoot()
   ],
-  providers: [SqlQuerys,ModeloLoggin,UsuarioLoggeado],
+  providers: [SqlQuerys,SqlActas,SqlUsuario,ModeloLoggin,UsuarioLoggeado],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

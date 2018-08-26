@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const usuario = require('./Usuario/usuario.api')
+const actas = require('./Actas/actas.api')
 
 process.setMaxListeners(0);
 connection.connect(function (err) {
@@ -30,3 +31,7 @@ app.get("/", function (req, res) {
 //USUARIO
 usuario.loggin(app);
 usuario.actualizarUsuario(app);
+usuario.usuarioId(app);
+
+//Actas
+actas.listaTodasActas(app)

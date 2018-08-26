@@ -1,11 +1,19 @@
 
 Todo:
 
-  ☐ Mirar
-    ☐ https://ng-bootstrap.github.io/#/home
+  Mirar
+    https://ng-bootstrap.github.io/#/home
   
-  ☐ Color general de la aplicacion:
-    ☐ #93e4ff
+  Color base toda aplicaion
+    #93e4ff
+
+  ☐ Actas:
+    ✔ Hacer modelo acta @done(18-08-25 18:08)
+    ☐ Backend
+    ☐ Listar todas las actas
+    ☐ Buscador de actas
+    ☐ Opcion de exportar la acta
+    ☐ Usar modales para mostrar el acta entera
 
   ☐ Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
@@ -13,13 +21,16 @@ Todo:
       ✔ Pasar de la pagina loggin @done(18-08-24 11:24)
       ✔ Hacer el backup donde guarde los datos del usuario logeado @done(18-08-25 11:31)
   
-  ☐ Componente Loggin:
+  ☐ Componente Panel Usuario:
     ✔ Actualizar datos en la base de datos @done(18-08-25 15:31)
     ✔ Actualizar el objeto general con los datos del usuario registrado @done(18-08-25 15:32)
     ✔ Añadido css y ha quedado muy bonito @done(18-08-25 15:33)
     ☐ Validaciones
       ✔ No puede estar en blanco @done(18-08-25 15:32)
       ☐ Añadir expresiones regulares
+    ☐ Bug:
+      ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
+        //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
 
   ☐ Panel-Personal:
     ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
@@ -41,6 +52,21 @@ Todo:
       Libreria que añade box alerts 
       +info: https://github.com/scttcper/ngx-toastr
       Crear las alertas online https://scttcper.github.io/ngx-toastr/
+    ✔ momentjs @done(18-08-26 10:57)
+      Libreria para formatear fechas 
+      +info: https://momentjs.com/
+      Forma de añadirlo a cualquier componente
+        https://momentjs.com/docs/#/use-it/typescript/
+    ✘ Popper.js @cancelled(18-08-26 12:36)
+      Libreria de popups 
+      +info: https://popper.js.org/
+      En verdad creo que no hace mucha falta con bulma y el ng-bootstrap pero bueno
+    ✘ ngx-bootstrap @cancelled(18-08-26 12:55)
+      Libreria para añadir dropdowns 
+      +info: https://valor-software.com/ngx-bootstrap/#/
+        
+      
+
 
   ✔ Css: @done(18-08-23 19:47)
     ✔ Font Awesome (https://fontawesome.com/) @done(18-08-23 19:28)
