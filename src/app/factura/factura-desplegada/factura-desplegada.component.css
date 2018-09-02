@@ -1,0 +1,16 @@
+#separadorTituloDescripcion {
+    margin-top: 0px;
+    background-color: #93e4ff;
+}
+
+#descripcion {
+    font-family: 'Merriweather', serif;
+    color: black;
+    margin-top: -35px;
+    background-color: #EAF2F8
+}
+
+#titulo {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}

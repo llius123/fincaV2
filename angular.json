@@ -135,8 +135,5 @@
   },
   "defaultProject": "fincaV2",
   "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
-    }
   }
 }

@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <div class="column is-four-fifths">
+        <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="volver()">
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr style="background-color: #93e4ff;width: 100%;">
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Fecha:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.fecha }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Nombre empresa:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.nombre_empresa }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Base imponible:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.base_imponible }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Total factura:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.total_factura }}
+      </p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Tipo:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.tipo_id }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Descripcion:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.descripcion }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Imagen:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.imagen }}
+      </p>
+    </div>
+  </div>
+</div>

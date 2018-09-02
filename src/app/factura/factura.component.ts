@@ -2,6 +2,8 @@ import { ModeloFactura } from './../models/model.service';
 import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { SqlFactura } from '../sql/sq.factura.service';
+import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
+import { FacturaDesplegada } from '../models/factura-desplegada.service';
 
 
 @Component({
@@ -11,9 +13,10 @@ import { SqlFactura } from '../sql/sq.factura.service';
 })
 export class FacturaComponent implements OnInit {
 
-  constructor(private sqlFactura: SqlFactura) { }
+  constructor(private sqlFactura: SqlFactura, private router: Router, private route: ActivatedRoute, private facturaDesplegada: FacturaDesplegada) { }
 
   facturas: ModeloFactura;
+  factura2: ModeloFactura;
   arrayFacturas: ModeloFactura[];
 
   arrayTipoFactura = [];
@@ -43,6 +46,14 @@ export class FacturaComponent implements OnInit {
   tipoFactura(index: number) {
     index = index -1;
     return this.arrayTipoFactura[index];
+  }
+
+  factura_desplegada(factura: ModeloFactura) {
+    
+    this.factura2 = factura;
+    this.factura2.tipo_id = this.tipoFactura(this.factura2.tipo_id);
+    this.facturaDesplegada.setFactura(this.factura2);
+    this.router.navigate(['factura-desplegada'], { relativeTo: this.route})
   }
 
 }

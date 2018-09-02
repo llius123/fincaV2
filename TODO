@@ -12,6 +12,7 @@ Todo:
 
   ✔ Angular material @done(18-09-02 13:20)
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
+    https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
 
   ☐ Facturas:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
@@ -97,4 +98,4 @@ Todo:
     ✔ Font Awesome (https://fontawesome.com/) @done(18-08-23 19:28)
     ✔ Bulma.io (https://bulma.io/documentation/) @done(18-08-23 19:39)
     ✔ Hover css (http://ianlunn.github.io/Hover/) @done(18-08-23 19:46)
-    ✔ Top 10 librerias css (https://www.webdesigndegreecenter.org/ten-best-css-libraries-developers-designers/) @done(18-08-23 22:34)
+    Top 10 librerias css (https://www.webdesigndegreecenter.org/ten-best-css-libraries-developers-designers/)
