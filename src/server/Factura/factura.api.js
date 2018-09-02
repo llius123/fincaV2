@@ -9,3 +9,12 @@ exports.todasFacturas = function (app) {
         })
     })
 }
+
+exports.todosLosTipos = function (app) {
+    app.get("/todosLosTipos", function (req, res) {
+        connection.query("select * from tipo_factura", function (error, result) {
+            if (error) console.log(error);
+            res.end(res.json(result))
+        })
+    })
+}

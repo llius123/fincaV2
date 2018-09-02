@@ -10,6 +10,17 @@ Todo:
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
 
+  ✔ Angular material @done(18-09-02 13:20)
+    ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
+
+  ☐ Facturas:
+    ✔ Hacer modelo factura @done(18-09-02 09:40)
+    ☐ Listar todas las facturas
+    ☐ Hacer buscador de facturas
+    ☐ Bug :
+      ☐ SUPER BUGAZO
+        --> IMPORTANTE <-- CADA VEZ QUE PASO EL RATON POR ENCIMA DEL ICONO AMPLIAR FACTURA EL METODO tipoFactura() SE EJECUTA MUCHISIMAS VECES
+
   ☐ Actas:
     ✔ Hacer modelo acta @done(18-08-25 18:08)
     ✘ Hacer un boton que cuando se pulse aparezca un hover con un resumen de la factura entera @cancelled(18-08-28 11:12)

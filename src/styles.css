@@ -1,6 +1,23 @@
 /*Angular material css */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+/*Modificado caracteristicas de mat-tooltip de material-angular, mas info en TODO */
+.mat-tooltip{
+    font-family:Roboto,"Helvetica Neue",sans-serif;
+    font-size:15px;
+    padding-top:6px;
+    padding-bottom:6px;
+    background-color: #93e4ff;
+    color: black !important;
+}
+.mat-tooltip-handset{
+    font-size:15px;
+    padding-top:9px;
+    padding-bottom:9px;
+}
+
+
 /* Underline Hover botones usuario */
 .hvr-botones-usuario {
     display: inline-block;
@@ -33,7 +50,7 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
-  /* Underline Hover botones usuario */
+  /* Underline Hover botones usuario cancelar */
 .hvr-botones-usuario-cancelar {
   display: inline-block;
   vertical-align: middle;

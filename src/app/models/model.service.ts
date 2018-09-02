@@ -40,6 +40,7 @@ export class ModeloFactura {
         public base_imponible: number,
         public total_factura: number,
         public imagen: Blob,
+        public fecha: string,
         public tipo_id: number
     ) {}
 }

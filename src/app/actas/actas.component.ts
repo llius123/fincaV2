@@ -39,5 +39,4 @@ export class ActasComponent implements OnInit {
     this.router.navigate(['acta-desplegada'], { relativeTo: this.route })
     this.actaDesplegada.guardarActa(acta)
   }
-
 }

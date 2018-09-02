@@ -51,7 +51,7 @@ import { SqlFactura } from "./sql/sq.factura.service";
     AppRoute,
     ToastrModule.forRoot()
   ],
-  providers: [SqlQuerys,SqlActas,SqlUsuario,SqlFactura,ModeloLoggin,UsuarioLoggeado,ActaDesplegada],
+  providers: [SqlQuerys, SqlActas, SqlUsuario, SqlFactura, ModeloLoggin, UsuarioLoggeado, ActaDesplegada],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

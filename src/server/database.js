@@ -39,3 +39,4 @@ actas.listaTodasActas(app)
 
 //Factura
 factura.todasFacturas(app)
+factura.todosLosTipos(app)
