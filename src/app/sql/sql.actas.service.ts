@@ -42,7 +42,7 @@ export class SqlActas {
                         let fechaFormateado = `${dia}-${mes}-${anyo}`;
 
                         this.arrayModeloSimple = new ModeloActas(
-                            item.id,item.lugar,fechaFormateado,item.caracter_convocatorio,item.acuerdos_adoptados,item.propietarios_derecho_voto
+                            item.id, item.lugar, fechaFormateado, item.caracter_convocatorio, item.autor_convocatoria,item.acuerdos_adoptados,item.propietarios_derecho_voto
                         );
                         this.arrayModelo.push(this.arrayModeloSimple)
                     }

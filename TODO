@@ -6,14 +6,21 @@ Todo:
   
   Color base toda aplicaion
     #93e4ff
+  Texto general titulo
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
 
   ☐ Actas:
     ✔ Hacer modelo acta @done(18-08-25 18:08)
+    ✘ Hacer un boton que cuando se pulse aparezca un hover con un resumen de la factura entera @cancelled(18-08-28 11:12)
+      Bulma css no tiene js asi que no se como añadirlo
     ☐ Backend
-    ☐ Listar todas las actas
+    ✔ Listar todas las actas @done(18-08-28 11:12)
     ☐ Buscador de actas
     ☐ Opcion de exportar la acta
-    ☐ Usar modales para mostrar el acta entera
+    ✘ Usar modales para mostrar el acta entera @cancelled(18-08-28 11:12)
+      La enseño en el componente acta-desplegada
+    ✔ Añadir css @done(18-08-28 13:47)
 
   ☐ Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
@@ -25,14 +32,16 @@ Todo:
     ✔ Actualizar datos en la base de datos @done(18-08-25 15:31)
     ✔ Actualizar el objeto general con los datos del usuario registrado @done(18-08-25 15:32)
     ✔ Añadido css y ha quedado muy bonito @done(18-08-25 15:33)
-    ☐ Validaciones
-      ✔ No puede estar en blanco @done(18-08-25 15:32)
-      ☐ Añadir expresiones regulares
-    ☐ Bug:
-      ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
-        //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
-
+  ☐ Validaciones
+    ✔ No puede estar en blanco @done(18-08-25 15:32)
+    ☐ Añadir expresiones regulares
+  ☐ Bug:
+    ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
+    //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
+  
   ☐ Panel-Personal:
+    ☐ Añadir angular material tabs, es solo para que se vea mejor
+      https://material.angular.io/components/tabs/overview
     ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
     ☐ Rellenar cada componente 
 
@@ -57,13 +66,18 @@ Todo:
       +info: https://momentjs.com/
       Forma de añadirlo a cualquier componente
         https://momentjs.com/docs/#/use-it/typescript/
-    ✘ Popper.js @cancelled(18-08-26 12:36)
+    ✔ Popper.js y Tooltip.js @done(18-08-26 17:39)
       Libreria de popups 
       +info: https://popper.js.org/
-      En verdad creo que no hace mucha falta con bulma y el ng-bootstrap pero bueno
+      Estan instaladas pero no las uso porque NO SE JAJAJAJAJA
+      Forma de usarlos
+        import * as Popper from 'popper.js'
+        import * as $ from 'jquery';
     ✘ ngx-bootstrap @cancelled(18-08-26 12:55)
       Libreria para añadir dropdowns 
       +info: https://valor-software.com/ngx-bootstrap/#/
+    ✔ Angular material @done(18-08-29 09:45)
+      +info: https://material.angular.io/
         
       
 

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-four-fifths">
+      <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="volver()">
+        Volver
+      </button>
+    </div>
+    <div class="column">
+      <button class="button is-light is-medium hvr-botones-usuario" disabled>
+        Descargar en PDF
+      </button>
+    </div>
+  </div>
+  <hr style="background-color: #93e4ff;width: 100%;">
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Fecha:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ acta.fecha }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Lugar:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ acta.lugar }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Autor convocatoria:
+      </p>
+      <hr id="separadorTituloDescripcionAutorConvocatorio">
+      <br />
+      <p id="descripcion">
+        {{ acta.autor_convocatorio }}
+      </p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Acuerdos adoptados:
+      </p>
+      <hr id="separadorTituloDescripcion" style="width: 14%;">
+      <br />
+      <p id="descripcion" style="margin-top: -15px;">
+        {{ acta.acuerdos_adoptados }}
+      </p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Propietarios con derecho a voto:
+      </p>
+      <hr id="separadorTituloDescripcion" style="width: 21%;">
+      <br />
+      <p id="descripcion">
+        {{ acta.propietarios_derecho_voto }}
+      </p>
+    </div>
+  </div>
+</div>

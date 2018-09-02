@@ -26,7 +26,20 @@ export class ModeloActas {
         public lugar: string,
         public fecha: string,
         public caracter_convocatorio: string,
+        public autor_convocatorio: string,
         public acuerdos_adoptados: string,
         public propietarios_derecho_voto: string
+    ) {}
+}
+
+export class ModeloFactura {
+    constructor(
+        public id: number,
+        public nombre_empresa: string,
+        public descripcion: string,
+        public base_imponible: number,
+        public total_factura: number,
+        public imagen: Blob,
+        public tipo_id: number
     ) {}
 }

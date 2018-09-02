@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const usuario = require('./Usuario/usuario.api')
 const actas = require('./Actas/actas.api')
+const factura = require('./Factura/factura.api')
 
 process.setMaxListeners(0);
 connection.connect(function (err) {
@@ -35,3 +36,6 @@ usuario.usuarioId(app);
 
 //Actas
 actas.listaTodasActas(app)
+
+//Factura
+factura.todasFacturas(app)

@@ -1,0 +1,13 @@
+hr {
+    width: 79px;
+    margin-top: 0px;
+    background-color: #93e4ff;
+}
+
+#cssBox {
+    width: 15%;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 200px;
+}

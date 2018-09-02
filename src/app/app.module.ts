@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { ToastrModule } from 'ngx-toastr';
 
+import { MatTooltipModule } from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 import { LogginComponent } from './loggin/loggin.component';
@@ -21,6 +23,10 @@ import { UsuarioLoggeado } from "./models/usuarioLoggeado.service";
 import { UsuarioComponent } from './usuario/usuario.component';
 import { SqlActas } from "./sql/sql.actas.service";
 import { SqlUsuario } from "./sql/sql.usuario.service";
+import { ActaDesplegadaComponent } from './actas/acta-desplegada/acta-desplegada.component';
+import { ActaDesplegada } from "./models/acta-desplegada.service";
+import { SqlFactura } from "./sql/sq.factura.service";
+
 
 
 @NgModule({
@@ -31,9 +37,11 @@ import { SqlUsuario } from "./sql/sql.usuario.service";
     ActasComponent,
     FacturaComponent,
     IncidenciasComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ActaDesplegadaComponent
   ],
   imports: [
+    MatTooltipModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -43,7 +51,7 @@ import { SqlUsuario } from "./sql/sql.usuario.service";
     AppRoute,
     ToastrModule.forRoot()
   ],
-  providers: [SqlQuerys,SqlActas,SqlUsuario,ModeloLoggin,UsuarioLoggeado],
+  providers: [SqlQuerys,SqlActas,SqlUsuario,SqlFactura,ModeloLoggin,UsuarioLoggeado,ActaDesplegada],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

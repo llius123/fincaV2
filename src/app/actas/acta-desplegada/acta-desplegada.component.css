@@ -1,0 +1,28 @@
+#botonVolver{
+    margin-left: 43.5%;
+    width: 15%;
+}
+
+hr {
+    width: 79px;
+    margin-top: 0px;
+    background-color: #93e4ff;
+}
+
+#titulo {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+#descripcion {
+    font-family: 'Merriweather', serif;
+    color: black;
+    margin-top: -35px;
+    background-color: #EAF2F8
+}
+
+#separadorTituloDescripcionAutorConvocatorio {
+    width: 188px;
+    margin-top: 0px;
+    background-color: #93e4ff;
+}
