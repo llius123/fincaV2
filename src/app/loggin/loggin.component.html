@@ -9,7 +9,7 @@
   <form [formGroup]="logginForm">
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input class="input hvr-input-inicio" type="text" placeholder="Usuario" formControlName="user"  >
+        <input class="input hvr-input-inicio" type="text" placeholder="Usuario" formControlName="user"  style="border: 1px solid black;">
         <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
         </span>
@@ -29,7 +29,7 @@
     </div>
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input hvr-input-inicio" type="password" placeholder="Contraseña" formControlName="pass" >
+        <input class="input hvr-input-inicio" type="password" placeholder="Contraseña" formControlName="pass" style="border: 1px solid black;">
         <span class="icon is-small is-left">
           <i class="fas fa-key"></i>
         </span>
@@ -67,8 +67,8 @@
         <button style="border-color: black;" class="button is-light is-medium hvr-botones-inicio" id="recuperarPass">
           Recuperar contraseña
         </button>
-        <button (click)="autologin()">Autologin</button>
       </p>
     </div>
   </form>
 </div>
+<button (click)="autologin()">Autologin</button>

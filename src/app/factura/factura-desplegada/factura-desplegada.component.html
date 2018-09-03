@@ -1,11 +1,12 @@
 <div class="container">
   <div class="columns">
     <div class="column">
-      <div class="column is-four-fifths">
-        <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="volver()">
-          Volver
-        </button>
-      </div>
+      <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="volver()">
+        Volver
+      </button>
+      <button class="button is-light is-medium hvr-botones-usuario" disabled style="float: right;">
+        Descargar en PDF
+      </button>
     </div>
   </div>
   <hr style="background-color: #93e4ff;width: 100%;">
@@ -28,26 +29,6 @@
       <br />
       <p id="descripcion">
         {{ factura.nombre_empresa }}
-      </p>
-    </div>
-    <div class="column">
-      <p id="titulo">
-        Base imponible:
-      </p>
-      <hr id="separadorTituloDescripcion">
-      <br />
-      <p id="descripcion">
-        {{ factura.base_imponible }}
-      </p>
-    </div>
-    <div class="column">
-      <p id="titulo">
-        Total factura:
-      </p>
-      <hr id="separadorTituloDescripcion">
-      <br />
-      <p id="descripcion">
-        {{ factura.total_factura }}
       </p>
     </div>
   </div>
@@ -80,6 +61,68 @@
       <br />
       <p id="descripcion">
         {{ factura.imagen }}
+      </p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column">
+      <p id="titulo">
+        Base imponible:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.base_imponible }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        IVA:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.iva }}%
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Cuota iva:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.cuota_iva }}%
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Retencion:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.retencion }}%
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Cuota retencion:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.cuota_retencion }}
+      </p>
+    </div>
+    <div class="column">
+      <p id="titulo">
+        Total factura:
+      </p>
+      <hr id="separadorTituloDescripcion">
+      <br />
+      <p id="descripcion">
+        {{ factura.total_factura }}
       </p>
     </div>
   </div>

@@ -52,7 +52,11 @@ export class SqlFactura {
                                 item.total_factura,
                                 item.imagen,
                                 fechaFormateado,
-                                item.tipo_id
+                                item.tipo_id,
+                                item.iva,
+                                item.cuota_iva,
+                                item.retencion,
+                                item.cuota_retencion
                             );
                             this.arrayTodasFacturas.push(this.todasFacturasObjeto)
                         }

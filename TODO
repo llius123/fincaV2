@@ -14,7 +14,7 @@ Todo:
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
     https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
 
-  ☐ Facturas:
+  Facturas:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
     ☐ Listar todas las facturas
     ☐ Hacer buscador de facturas
@@ -22,7 +22,7 @@ Todo:
       ☐ SUPER BUGAZO
         --> IMPORTANTE <-- CADA VEZ QUE PASO EL RATON POR ENCIMA DEL ICONO AMPLIAR FACTURA EL METODO tipoFactura() SE EJECUTA MUCHISIMAS VECES
 
-  ☐ Actas:
+  Actas:
     ✔ Hacer modelo acta @done(18-08-25 18:08)
     ✘ Hacer un boton que cuando se pulse aparezca un hover con un resumen de la factura entera @cancelled(18-08-28 11:12)
       Bulma css no tiene js asi que no se como añadirlo
@@ -34,32 +34,44 @@ Todo:
       La enseño en el componente acta-desplegada
     ✔ Añadir css @done(18-08-28 13:47)
 
-  ☐ Loggin:
+  Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
-    ☐ Backend loggin:
+    ✔ Backend loggin: @done(18-09-03 11:24)
       ✔ Pasar de la pagina loggin @done(18-08-24 11:24)
       ✔ Hacer el backup donde guarde los datos del usuario logeado @done(18-08-25 11:31)
   
-  ☐ Componente Panel Usuario:
+  Componente Panel Usuario:
     ✔ Actualizar datos en la base de datos @done(18-08-25 15:31)
     ✔ Actualizar el objeto general con los datos del usuario registrado @done(18-08-25 15:32)
     ✔ Añadido css y ha quedado muy bonito @done(18-08-25 15:33)
-  ☐ Validaciones
-    ✔ No puede estar en blanco @done(18-08-25 15:32)
-    ☐ Añadir expresiones regulares
-  ☐ Bug:
-    ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
-    //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
+    ☐ Validaciones
+      ✔ No puede estar en blanco @done(18-08-25 15:32)
+      ☐ Añadir expresiones regulares
+    ☐ Bug:
+      ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
+      //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
   
-  ☐ Panel-Personal:
+  Panel-Personal:
     ☐ Añadir angular material tabs, es solo para que se vea mejor
       https://material.angular.io/components/tabs/overview
     ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
+    ☐ Añadir a la izquierda tu nombre de usuario
     ☐ Rellenar cada componente 
 
-  ☐ Base de datos:
+  Base de datos:
     ✔ Construir base de datos @done(18-08-23 22:46)
-    ☐ Hacer mejoras
+    Hacer mejoras:
+      Tabla facturas:
+        ✔ En el apartado length de los campos int he puesto 10,2 que significa que el numero contenido puede tener hasta 2 decimales @done(18-09-03 09:43)
+        ✔ Añadido cuota_iva que es aplicar el iva sobre la base imponible @done(18-09-03 09:43)
+        ✔ Añadido campo iva @done(18-09-03 09:44)
+        ✔ Añadir campo retencion @done(18-09-03 11:23)
+        length/set-->(5,2) 
+        Es un porcentaje igual que el iva
+        ✔ Añadir campo cuota retencion @done(18-09-03 11:23)
+        Es el calculo de --> aplicar la retencion sobre la base imponible y cambiandola de signo
+        ✔ Total factura @done(18-09-03 11:23)
+        Base imponible + cuota de iva - retencion(siempre es negativo, nunca positivo)
 
   ✔ Paquetes npm para instalar @done(18-08-23 19:47)
     ✔ mysql @done(18-08-23 19:11)
