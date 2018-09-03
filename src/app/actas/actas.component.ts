@@ -18,7 +18,7 @@ export class ActasComponent implements OnInit {
 
   constructor(private sql: SqlActas, private router: Router, private route: ActivatedRoute, private actaDesplegada: ActaDesplegada) { }
 
-  fechas = [];
+  actas = [];
 
   todasActas: Subscription;
 
@@ -30,7 +30,7 @@ export class ActasComponent implements OnInit {
     this.todasActas = this.sql.listaTodasActas()
       .pipe(
         map(actas => {
-          this.fechas = actas;
+          this.actas = actas;
         })
       ).subscribe()
   }
