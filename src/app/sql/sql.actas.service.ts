@@ -34,7 +34,7 @@ export class SqlActas {
                         item = data[_i];
                         let fecha;
                         fecha = moment(item.fecha);
-                        
+
                         let dia = fecha.date();
                         let mes = fecha.month();
                         let anyo = fecha.year();
@@ -42,13 +42,41 @@ export class SqlActas {
                         let fechaFormateado = `${dia}-${mes}-${anyo}`;
 
                         this.arrayModeloSimple = new ModeloActas(
-                            item.id, item.lugar, fechaFormateado, item.caracter_convocatorio, item.autor_convocatoria,item.acuerdos_adoptados,item.propietarios_derecho_voto
+                            item.id, item.lugar, fechaFormateado, item.caracter_convocatorio, item.autor_convocatoria, item.acuerdos_adoptados, item.propietarios_derecho_voto
                         );
                         this.arrayModelo.push(this.arrayModeloSimple)
                     }
                     return this.arrayModelo
                 }
             ));
+    }
+
+    busquedaFecha(fecha: string) {
+        this.url = `${this.api}/busquedaFecha/${fecha}`;
+        return this.http.get(this.url)
+            .pipe(map(
+                (data: any) => {
+                    this.arrayModelo = [];
+                    for (var _i = 0; _i < data.length; _i++) {
+                        let item;
+                        item = data[_i];
+                        let fecha;
+                        fecha = moment(item.fecha);
+
+                        let dia = fecha.date();
+                        let mes = fecha.month();
+                        let anyo = fecha.year();
+
+                        let fechaFormateado = `${dia}-${mes}-${anyo}`;
+
+                        this.arrayModeloSimple = new ModeloActas(
+                            item.id, item.lugar, fechaFormateado, item.caracter_convocatorio, item.autor_convocatoria, item.acuerdos_adoptados, item.propietarios_derecho_voto
+                        );
+                        this.arrayModelo.push(this.arrayModeloSimple)
+                    }
+                    return this.arrayModelo
+                }
+            ))
     }
 
 }

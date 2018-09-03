@@ -36,6 +36,7 @@ usuario.usuarioId(app);
 
 //Actas
 actas.listaTodasActas(app)
+actas.busquedaFecha(app);
 
 //Factura
 factura.todasFacturas(app)

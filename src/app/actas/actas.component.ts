@@ -8,6 +8,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import Popper from 'popper.js'
 import * as $ from 'jquery';
+import * as moment from 'moment'
+
 import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 import { ModeloActas } from '../models/model.service';
 
@@ -36,6 +38,8 @@ export class ActasComponent implements OnInit {
 
   actas = [];
 
+  dataPicker;
+
   todasActas: Subscription;
 
   ngOnInit() {
@@ -56,7 +60,28 @@ export class ActasComponent implements OnInit {
     this.actaDesplegada.guardarActa(acta)
   }
 
-  buscar(data: any) {
-    console.log(data)
+
+  /**
+   *  Objeto que se obtiene del DatePicker {year: ...,month: ..., date: ....}
+   * @param {*} fecha
+   * @memberof ActasComponent
+   */
+  buscar(fecha: any) {
+
+    let dia = fecha.date;
+    let mes = fecha.month +1;
+    let anyo = fecha.year;
+    
+    let fechaFormateado = `${anyo}-${mes}-${dia}`;
+
+    this.sql.busquedaFecha(fechaFormateado).subscribe(
+      (data) => {
+        this.actas = data
+      }
+    )
+  }
+
+  limpiar() {
+    this.listarFechaActas();
   }
 }

@@ -4,18 +4,19 @@
       <div class="field" style="margin-left: 60%;">
         <div class="control">
           <mat-form-field>
-            <input matInput [matDatepicker]="dp" placeholder="Different locale">
+            <input matInput [matDatepicker]="dp" placeholder="Seleccionar fecha">
             <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
             <mat-datepicker #dp></mat-datepicker>
           </mat-form-field>
-          
-          <button mat-button (click)="french()">Esp</button>
         </div>
       </div>
     </div>
     <div class="column ">
-      <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="buscar(picker)">
+      <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="buscar(dp.startAt._i)" [disabled]="!dp.startAt">
         Buscar
+      </button>
+      <button class="button is-light is-medium hvr-botones-usuario-cancelar" id="botonFontFamily" (click)="limpiar()" style="margin-left: 1%">
+        Limpiar
       </button>
     </div>
   </div>
