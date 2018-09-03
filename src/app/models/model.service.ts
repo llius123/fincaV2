@@ -41,6 +41,10 @@ export class ModeloFactura {
         public total_factura: number,
         public imagen: Blob,
         public fecha: string,
-        public tipo_id: number
+        public tipo_id: number,
+        public iva: number,
+        public cuota_iva: number,
+        public retencion: number,
+        public cuota_retencion: number
     ) {}
 }
