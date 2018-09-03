@@ -13,6 +13,8 @@ Todo:
   ✔ Angular material @done(18-09-02 13:20)
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
     https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
+    ✔ Posibles soluciones a errores: @done(18-09-03 17:08)
+      ✔ Importar el MatInputModule si se va a usar algun input, tipo el date @done(18-09-03 17:08)
 
   Facturas:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
@@ -102,6 +104,9 @@ Todo:
       +info: https://valor-software.com/ngx-bootstrap/#/
     ✔ Angular material @done(18-08-29 09:45)
       +info: https://material.angular.io/
+    ✔ Material-moment-adapter @done(18-09-03 17:45)
+        +info: https://www.npmjs.com/package/@angular/material-moment-adapter
+        Añadido este paquete para poder poner el input en formato europeo y no americano
         
       
 
