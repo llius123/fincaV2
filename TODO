@@ -10,7 +10,7 @@ Todo:
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
 
-  ✔ Angular material @done(18-09-02 13:20)
+  Angular material:
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
     https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
     Solucion 2 --> Buscar en node_modules el archivo css y modificarlo dentro del proyecto
@@ -22,6 +22,8 @@ Todo:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
     ✔ Listar todas las facturas @done(18-09-03 12:38)
     ☐ Hacer buscador de facturas
+      ☐ Por fecha
+      ☐ Por tipo
     ☐ Bug :
       ☐ SUPER BUGAZO
         --> IMPORTANTE <-- CADA VEZ QUE PASO EL RATON POR ENCIMA DEL ICONO AMPLIAR FACTURA EL METODO tipoFactura() SE EJECUTA MUCHISIMAS VECES
@@ -40,6 +42,7 @@ Todo:
     ✔ Añadir css @done(18-08-28 13:47)
     ☐ Bugs:
       ☐ Cuando listo todas las actas, cuando saco la fecha la libreria momentjs le resta un mes y no entiendo el porque
+  
   Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
     ✔ Backend loggin: @done(18-09-03 11:24)
@@ -109,8 +112,8 @@ Todo:
     ✔ Angular material @done(18-08-29 09:45)
       +info: https://material.angular.io/
     ✔ Material-moment-adapter @done(18-09-03 17:45)
-        +info: https://www.npmjs.com/package/@angular/material-moment-adapter
-        Añadido este paquete para poder poner el input en formato europeo y no americano
+      +info: https://www.npmjs.com/package/@angular/material-moment-adapter
+      Añadido este paquete para poder poner el input en formato europeo y no americano
         
       
 

@@ -9,7 +9,6 @@
 .mat-form-field.mat-focused .mat-form-field-label {
   color: #5c5959;
   font-family: 'Merriweather', serif;
-  /* font-family: 'Montserrat', sans-serif; */
 }
 
 /*Modificado caracteristicas de mat-tooltip de material-angular, mas info en TODO */
