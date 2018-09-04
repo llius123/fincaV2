@@ -36,7 +36,7 @@ export class SqlActas {
                         fecha = moment(item.fecha);
 
                         let dia = fecha.date();
-                        let mes = fecha.month();
+                        let mes = fecha.month() +1;
                         let anyo = fecha.year();
 
                         let fechaFormateado = `${dia}-${mes}-${anyo}`;
@@ -51,6 +51,13 @@ export class SqlActas {
             ));
     }
 
+    /**
+     * Busco un año y muestro una lista de actas que coincidan con ese año
+     *
+     * @param {string} fecha
+     * @returns
+     * @memberof SqlActas
+     */
     busquedaFecha(fecha: string) {
         this.url = `${this.api}/busquedaFecha/${fecha}`;
         return this.http.get(this.url)
@@ -64,7 +71,7 @@ export class SqlActas {
                         fecha = moment(item.fecha);
 
                         let dia = fecha.date();
-                        let mes = fecha.month();
+                        let mes = fecha.month() + 1;
                         let anyo = fecha.year();
 
                         let fechaFormateado = `${dia}-${mes}-${anyo}`;

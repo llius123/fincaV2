@@ -12,7 +12,7 @@ exports.listaTodasActas = function (app) {
 
 exports.busquedaFecha = function (app) {
     app.get("/busquedaFecha/:fecha", function (req, res) {
-        connection.query("select * from actas where fecha = ?",
+        connection.query("select * from actas where YEAR(fecha) = ?",
             [req.params.fecha],
             function (error, result) {
                 if (error) console.log(error);

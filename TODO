@@ -13,12 +13,14 @@ Todo:
   ✔ Angular material @done(18-09-02 13:20)
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
     https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
+    Solucion 2 --> Buscar en node_modules el archivo css y modificarlo dentro del proyecto
+    /home/jesus/Javascript/Angular1/fincaV2/node_modules/@angular/material/prebuilt-themes/indigo-pink.css
     ✔ Posibles soluciones a errores: @done(18-09-03 17:08)
       ✔ Importar el MatInputModule si se va a usar algun input, tipo el date @done(18-09-03 17:08)
 
   Facturas:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
-    ☐ Listar todas las facturas
+    ✔ Listar todas las facturas @done(18-09-03 12:38)
     ☐ Hacer buscador de facturas
     ☐ Bug :
       ☐ SUPER BUGAZO
@@ -30,12 +32,14 @@ Todo:
       Bulma css no tiene js asi que no se como añadirlo
     ☐ Backend
     ✔ Listar todas las actas @done(18-08-28 11:12)
-    ☐ Buscador de actas
+    ✔ Buscador de actas @done(18-09-04 10:09)
+      ✔ Busco por año, aunque el datepicker te pida que introduzcas el dia y mes da igual @done(18-09-04 10:09)
     ☐ Opcion de exportar la acta
     ✘ Usar modales para mostrar el acta entera @cancelled(18-08-28 11:12)
       La enseño en el componente acta-desplegada
     ✔ Añadir css @done(18-08-28 13:47)
-
+    ☐ Bugs:
+      ☐ Cuando listo todas las actas, cuando saco la fecha la libreria momentjs le resta un mes y no entiendo el porque
   Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
     ✔ Backend loggin: @done(18-09-03 11:24)

@@ -4,10 +4,13 @@
       <div class="field" style="margin-left: 60%;">
         <div class="control">
           <mat-form-field>
-            <input matInput [matDatepicker]="dp" placeholder="Seleccionar fecha">
+            <input matInput [matDatepicker]="dp" placeholder="Buscador por año">
             <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
             <mat-datepicker #dp></mat-datepicker>
           </mat-form-field>
+          <div mat-raised-button matTooltip="La busqueda se hace a traves del año" style="width: 20px;float: right;margin-top: 5%;padding-left: 2%;">
+            <i class="far fa-question-circle fa-2x"></i>
+          </div>
         </div>
       </div>
     </div>

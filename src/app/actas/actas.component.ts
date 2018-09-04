@@ -68,13 +68,13 @@ export class ActasComponent implements OnInit {
    */
   buscar(fecha: any) {
 
-    let dia = fecha.date;
-    let mes = fecha.month +1;
+    // let dia = fecha.date;
+    // let mes = fecha.month + 1;
     let anyo = fecha.year;
-    
-    let fechaFormateado = `${anyo}-${mes}-${dia}`;
 
-    this.sql.busquedaFecha(fechaFormateado).subscribe(
+    // let fechaFormateado = `${anyo}-${mes}-${dia}`;
+
+    this.sql.busquedaFecha(fecha.year).subscribe(
       (data) => {
         this.actas = data
       }

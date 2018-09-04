@@ -2,6 +2,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+/*Modificando los estilos del DatePicker */
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #93e4ff;
+}
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #5c5959;
+  font-family: 'Merriweather', serif;
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
 /*Modificado caracteristicas de mat-tooltip de material-angular, mas info en TODO */
 .mat-tooltip{
     font-family:Roboto,"Helvetica Neue",sans-serif;
