@@ -116,8 +116,8 @@ export class SqlFactura {
     );
   }
 
-  buscarPorFecha(fechaBusqueda: string) {
-    this.url = `${this.api}/buscarPorFecha/${fechaBusqueda}`;
+  buscarPorFecha(fechaBusqueda1: string,fechaBusqueda2) {
+    this.url = `${this.api}/buscarPorFecha/${fechaBusqueda1}/${fechaBusqueda2}`;
     return this.http.get(this.url).pipe(
       map((data: any) => {
         this.arrayTodasFacturas = [];

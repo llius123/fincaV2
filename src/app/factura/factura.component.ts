@@ -12,6 +12,17 @@ import {
 } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material";
 
+import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
+// Depending on whether rollup is used, moment needs to be imported differently.
+// Since Moment.js doesn't have a default export, we normally need to import using the `* as`
+// syntax. However, rollup creates a synthetic default module and we thus need to import it using
+// the `default as` syntax.
+import * as _moment from 'moment';
+
+const moment = _moment;
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
@@ -30,15 +41,26 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: "app-factura",
   templateUrl: "./factura.component.html",
-  styleUrls: ["./factura.component.css"]
+  styleUrls: ["./factura.component.css"],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
+    // `MatMomentDateModule` in your applications root module. We provide it at the component level
+    // here, due to limitations of our example generation script.
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  ],
 })
 export class FacturaComponent implements OnInit {
   formControlSelect = new FormControl();
   /*Esto va con la clase implementada arriba, mas info: https://material.angular.io/components/input/overview */
-  matcher = new MyErrorStateMatcher();
+  matcher1 = new MyErrorStateMatcher();
+  matcher2 = new MyErrorStateMatcher();
   anyoFormControl = new FormControl("", [
-    Validators.required,
-    Validators.pattern("([0-9]+){4,4}")
+    Validators.required
+  ]);
+  anyoFormContro2 = new FormControl("", [
+    Validators.required
   ]);
 
   constructor(
@@ -46,7 +68,7 @@ export class FacturaComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private facturaDesplegada: FacturaDesplegada
-  ) {}
+  ) { }
 
   facturas: ModeloFactura;
   factura2: ModeloFactura;

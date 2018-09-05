@@ -23,70 +23,78 @@
       </div>
       <div *ngIf="tipoFechaBuscar">
         <div class="control">
-          <mat-form-field class="example-full-width">
-            <input type="text" matInput placeholder="Busqueda por año" [formControl]="anyoFormControl" [errorStateMatcher]="matcher"
-              [maxLength]="4" [minLength]="4">
-            <mat-error *ngIf="anyoFormControl.hasError('required')">
+          <mat-form-field style="margin: 5%">
+            <input matInput [matDatepicker]="dp" placeholder="Moment.js datepicker" [formControl]="anyoFormControl" [errorStateMatcher]="matcher1">
+            <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+            <mat-datepicker #dp1></mat-datepicker>
+            <mat-error>
               El campo de busqueda no puede estar vacio
-            </mat-error>
-            <mat-error *ngIf="anyoFormControl.hasError('pattern')">
-              Introduce solo caracteres numericos y como minimo 4 caracteres
             </mat-error>
           </mat-form-field>
         </div>
-        <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario" id="actualizar" (click)="buscar(anyoFormControl.value,'fecha')">
-          Buscar
-        </button>
+        <div class="control">
+        <mat-form-field>
+            <input matInput [matDatepicker]="dp" placeholder="Moment.js datepicker" [formControl]="anyoFormContro2" [errorStateMatcher]="matcher2">
+            <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+            <mat-datepicker #dp2></mat-datepicker>
+            <mat-error>
+              El campo de busqueda no puede estar vacio
+            </mat-error>
+          </mat-form-field>
       </div>
-    </div>
-    <div class="column">
-      
+      <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario" id="actualizar" (click)="buscar(anyoFormControl.value,'fecha')">
+        Buscar
+      </button>
     </div>
   </div>
-  <div class="columns" style="margin: auto;">
-    <div class="column" style="margin-left: 8%;">
-      <div class="box" *ngFor="let f of arrayFacturas" id="cssBox">
-        <article class="media">
-          <div class="media-left">
-            <figure class="image is-64x64">
-              <i class="fas fa-file-invoice-dollar fa-3x" id="icono"></i>
-            </figure>
+  <div class="column">
+
+  </div>
+</div>
+<div class="columns" style="margin: auto;">
+  <div class="column" style="margin-left: 8%;">
+    <div class="box" *ngFor="let f of arrayFacturas" id="cssBox">
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <i class="fas fa-file-invoice-dollar fa-3x" id="icono"></i>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>Fecha</strong>
+            </p>
+            <hr style="margin-top: -16px;">
+            <br>
+            <p style="margin-top: -50px;">
+              {{ f.fecha }}
+            </p>
           </div>
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>Fecha</strong>
-              </p>
-              <hr style="margin-top: -16px;">
-              <br>
-              <p style="margin-top: -50px;">
-                {{ f.fecha }}
-              </p>
-            </div>
-            <div class="content">
-              <p>
-                <strong>Tipo</strong>
-              </p>
-              <hr style="margin-top: -16px;">
-              <br>
-              <p style="margin-top: -50px;">
-                {{ tipoFactura(f.tipo_id) }}
-              </p>
-            </div>
-            <nav class="level is-mobile">
-              <div class="level-left">
-                <a class="level-item" aria-label="retweet" (click)="factura_desplegada(f)">
-                  <span class="icon is-small">
-                    <div mat-raised-button matTooltip="Ver factura completa">
-                      <i class="fas fa-search-plus"></i>
-                    </div>
-                  </span>
-                </a>
-              </div>
-            </nav>
+          <div class="content">
+            <p>
+              <strong>Tipo</strong>
+            </p>
+            <hr style="margin-top: -16px;">
+            <br>
+            <p style="margin-top: -50px;">
+              {{ tipoFactura(f.tipo_id) }}
+            </p>
           </div>
-        </article>
-      </div>
+          <nav class="level is-mobile">
+            <div class="level-left">
+              <a class="level-item" aria-label="retweet" (click)="factura_desplegada(f)">
+                <span class="icon is-small">
+                  <div mat-raised-button matTooltip="Ver factura completa">
+                    <i class="fas fa-search-plus"></i>
+                  </div>
+                </span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </article>
     </div>
   </div>
+</div>
 </div>
