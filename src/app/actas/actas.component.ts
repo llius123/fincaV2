@@ -80,6 +80,7 @@ export class ActasComponent implements OnInit {
   }
 
   limpiar() {
+    this.anyoFormControl.reset();
     this.listarFechaActas();
   }
 }

@@ -18,3 +18,30 @@ exports.todosLosTipos = function (app) {
         })
     })
 }
+
+exports.buscarPorTipo = function (app) {
+    app.get("/buscarPorTipo/:tipo", function (req, res) {
+        connection.query(
+            `select 
+            f.id,
+            f.nombre_empresa,
+            f.descripcion,
+            f.base_imponible,
+            f.total_factura,
+            f.imagen_factura,
+            f.fecha,
+            f.tipo_id,
+            f.iva,
+            f.cuota_iva,
+            f.retencion,
+            f.cuota_retencion
+            from factura f, tipo_factura tf 
+            where f.tipo_id = tf.id 
+            and tf.tipo = ? `,
+            [req.params.tipo],
+            function(error, result) {
+                if(error) console.log(error);
+                res.end(res.json(result))
+            })
+    })
+}

@@ -4,6 +4,16 @@ import { Component, OnInit } from "@angular/core";
 import { SqlFactura } from "../sql/sq.factura.service";
 import { Router, ActivatedRoute } from "../../../node_modules/@angular/router";
 import { FacturaDesplegada } from "../models/factura-desplegada.service";
+import { FormControl, FormGroupDirective, NgForm, Validators } from "@angular/forms";
+import { ErrorStateMatcher } from "@angular/material";
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: "app-factura",
@@ -11,6 +21,15 @@ import { FacturaDesplegada } from "../models/factura-desplegada.service";
   styleUrls: ["./factura.component.css"]
 })
 export class FacturaComponent implements OnInit {
+  formControlSelect = new FormControl();
+  /*Esto va con la clase implementada arriba, mas info: https://material.angular.io/components/input/overview */
+  matcher = new MyErrorStateMatcher();
+  anyoFormControl = new FormControl("", [
+    Validators.required,
+    Validators.pattern('([0-9]+){4,4}')
+  ]);
+
+
   constructor(
     private sqlFactura: SqlFactura,
     private router: Router,
@@ -82,7 +101,19 @@ export class FacturaComponent implements OnInit {
     }
   }
 
-  buscar(tipo: any) {
-    console.log(tipo);
+  buscar(data: any, tipo: string) {
+    console.log(data, tipo)
+    switch (tipo) {
+      case 'fecha':
+        
+        break;
+      case 'tipo':
+      this.sqlFactura.buscarPorTipo(data).pipe(map(
+        (data: any) => {
+          this.cargarFacturas(data);
+        }
+      )).subscribe();
+      break;
+    }
   }
 }

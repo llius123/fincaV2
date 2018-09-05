@@ -11,26 +11,36 @@
     </div>
     <div class="column">
       <div *ngIf="tipoFacturaBuscar">
-        <div class="select" >
-          <select #selectTipo>
-            <option  [value]="tipo" *ngFor="let tipo of arrayTipoFactura"> {{tipo}}</option>
+        <div class="select">
+          <select [formControl]="formControlSelect" style="width: 160px">
+            <option [value]="tipo" *ngFor="let tipo of arrayTipoFactura" style="width: 160px"> {{tipo}}</option>
           </select>
+          <p class="help is-danger" *ngIf="formControlSelect.value === null && !formControlSelect.touched">Selecciona un tipo de factura</p>
         </div>
+        <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario" id="actualizar" (click)="buscar(formControlSelect.value, 'tipo')">
+          Buscar
+        </button>
       </div>
       <div *ngIf="tipoFechaBuscar">
-        <div #selectFecha>
-          tipo fecha
+        <div class="control">
+          <mat-form-field class="example-full-width">
+            <input type="text" matInput placeholder="Busqueda por año" [formControl]="anyoFormControl" [errorStateMatcher]="matcher"
+              [maxLength]="4" [minLength]="4">
+            <mat-error *ngIf="anyoFormControl.hasError('required')">
+              El campo de busqueda no puede estar vacio
+            </mat-error>
+            <mat-error *ngIf="anyoFormControl.hasError('pattern')">
+              Introduce solo caracteres numericos y como minimo 4 caracteres
+            </mat-error>
+          </mat-form-field>
         </div>
+        <button style="border-color: black;" class="button is-light is-medium hvr-botones-usuario" id="actualizar" (click)="buscar(anyoFormControl.value,'fecha')">
+          Buscar
+        </button>
       </div>
     </div>
     <div class="column">
-      <button 
-      style="border-color: black;" 
-      class="button is-light is-medium hvr-botones-usuario" 
-      id="actualizar" 
-      (click)="buscar(selectTipo)">
-        Buscar
-      </button>
+      
     </div>
   </div>
   <div class="columns" style="margin: auto;">
