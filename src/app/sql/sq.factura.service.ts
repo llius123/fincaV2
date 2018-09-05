@@ -115,4 +115,43 @@ export class SqlFactura {
       })
     );
   }
+
+  buscarPorFecha(fechaBusqueda: string) {
+    this.url = `${this.api}/buscarPorFecha/${fechaBusqueda}`;
+    return this.http.get(this.url).pipe(
+      map((data: any) => {
+        this.arrayTodasFacturas = [];
+        for (var _i = 0; _i < data.length; _i++) {
+          let item;
+          item = data[_i];
+
+          let fecha;
+          fecha = moment(item.fecha);
+
+          let dia = fecha.date();
+          let mes = fecha.month();
+          let anyo = fecha.year();
+
+          let fechaFormateado = `${dia}-${mes}-${anyo}`;
+
+          this.todasFacturasObjeto = new ModeloFactura(
+            item.id,
+            item.nombre_empresa,
+            item.descripcion,
+            item.base_imponible,
+            item.total_factura,
+            item.imagen,
+            fechaFormateado,
+            item.tipo_id,
+            item.iva,
+            item.cuota_iva,
+            item.retencion,
+            item.cuota_retencion
+          );
+          this.arrayTodasFacturas.push(this.todasFacturasObjeto);
+        }
+        return this.arrayTodasFacturas;
+      })
+    );
+  }
 }

@@ -45,3 +45,15 @@ exports.buscarPorTipo = function (app) {
             })
     })
 }
+exports.buscarPorFecha = function(app) {
+  app.get("/buscarPorFecha/:fecha", function(req, res) {
+    connection.query(
+      "select * from factura where YEAR(fecha) = ?",
+      [req.params.fecha],
+      function(error, result) {
+        if (error) console.log(error);
+        res.end(res.json(result));
+      }
+    );
+  });
+};

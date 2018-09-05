@@ -4,14 +4,26 @@ import { Component, OnInit } from "@angular/core";
 import { SqlFactura } from "../sql/sq.factura.service";
 import { Router, ActivatedRoute } from "../../../node_modules/@angular/router";
 import { FacturaDesplegada } from "../models/factura-desplegada.service";
-import { FormControl, FormGroupDirective, NgForm, Validators } from "@angular/forms";
+import {
+  FormControl,
+  FormGroupDirective,
+  NgForm,
+  Validators
+} from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }
 
@@ -26,9 +38,8 @@ export class FacturaComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   anyoFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern('([0-9]+){4,4}')
+    Validators.pattern("([0-9]+){4,4}")
   ]);
-
 
   constructor(
     private sqlFactura: SqlFactura,
@@ -102,18 +113,27 @@ export class FacturaComponent implements OnInit {
   }
 
   buscar(data: any, tipo: string) {
-    console.log(data, tipo)
     switch (tipo) {
-      case 'fecha':
-        
+      case "fecha":
+        this.sqlFactura
+          .buscarPorFecha(data)
+          .pipe(
+            map((data: any) => {
+              this.cargarFacturas(data);
+            })
+          )
+          .subscribe();
         break;
-      case 'tipo':
-      this.sqlFactura.buscarPorTipo(data).pipe(map(
-        (data: any) => {
-          this.cargarFacturas(data);
-        }
-      )).subscribe();
-      break;
+      case "tipo":
+        this.sqlFactura
+          .buscarPorTipo(data)
+          .pipe(
+            map((data: any) => {
+              this.cargarFacturas(data);
+            })
+          )
+          .subscribe();
+        break;
     }
   }
 }

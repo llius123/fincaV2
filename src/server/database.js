@@ -42,3 +42,4 @@ actas.busquedaFecha(app);
 factura.todasFacturas(app)
 factura.todosLosTipos(app)
 factura.buscarPorTipo(app)
+factura.buscarPorFecha(app)
