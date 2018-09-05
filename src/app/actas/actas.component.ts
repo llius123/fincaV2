@@ -4,38 +4,40 @@ import { Component, OnInit } from '@angular/core';
 import { SqlActas } from '../sql/sql.actas.service';
 import { Subscription } from '../../../node_modules/rxjs';
 
-import { MatDatepickerModule } from '@angular/material/datepicker';
-
-import Popper from 'popper.js'
-import * as $ from 'jquery';
-import * as moment from 'moment'
-
 import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
 import { ModeloActas } from '../models/model.service';
 
-import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
-import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
-  selector: 'app-actas',
-  templateUrl: './actas.component.html',
-  styleUrls: ['./actas.component.css'],
-  providers: [
-    // The locale would typically be provided on the root module of your application. We do it at
-    // the component level here, due to limitations of our example generation script.
-    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
-
-    // `MomentDateAdapter` and `MAT_MOMENT_DATE_FORMATS` can be automatically provided by importing
-    // `MatMomentDateModule` in your applications root module. We provide it at the component level
-    // here, due to limitations of our example generation script.
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
-  ],
+  selector: "app-actas",
+  templateUrl: "./actas.component.html",
+  styleUrls: ["./actas.component.css"]
 })
 export class ActasComponent implements OnInit {
+  constructor(
+    private sql: SqlActas,
+    private router: Router,
+    private route: ActivatedRoute,
+    private actaDesplegada: ActaDesplegada
+  ) {}
 
-  constructor(private adapter: DateAdapter<any>, private sql: SqlActas, private router: Router, private route: ActivatedRoute, private actaDesplegada: ActaDesplegada) { }
-
+  /*Esto va con la clase implementada arriba, mas info: https://material.angular.io/components/input/overview */
+  matcher = new MyErrorStateMatcher();
+  anyoFormControl = new FormControl("", [
+    Validators.required,
+    Validators.pattern('([0-9]+){4,4}')
+  ]);
+  
   actas = [];
 
   dataPicker;
@@ -47,34 +49,30 @@ export class ActasComponent implements OnInit {
   }
 
   listarFechaActas() {
-    this.todasActas = this.sql.listaTodasActas()
+    this.todasActas = this.sql
+      .listaTodasActas()
       .pipe(
         map(actas => {
           this.actas = actas;
         })
-      ).subscribe()
+      )
+      .subscribe();
   }
 
   acta_desplegada(acta: ModeloActas) {
-    this.router.navigate(['acta-desplegada'], { relativeTo: this.route })
-    this.actaDesplegada.guardarActa(acta)
+    this.router.navigate(["acta-desplegada"], { relativeTo: this.route });
+    this.actaDesplegada.guardarActa(acta);
   }
 
 
   /**
-   *  Objeto que se obtiene del DatePicker {year: ...,month: ..., date: ....}
+   *Obtengo la fecha del formControl
+   *
    * @param {*} fecha
    * @memberof ActasComponent
    */
   buscar(fecha: any) {
-
-    // let dia = fecha.date;
-    // let mes = fecha.month + 1;
-    let anyo = fecha.year;
-
-    // let fechaFormateado = `${anyo}-${mes}-${dia}`;
-
-    this.sql.busquedaFecha(fecha.year).subscribe(
+    this.sql.busquedaFecha(fecha).subscribe(
       (data) => {
         this.actas = data
       }

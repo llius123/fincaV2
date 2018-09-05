@@ -10,6 +10,11 @@ Todo:
     font-family: 'Merriweather', serif;
     font-family: 'Montserrat', sans-serif;
 
+  Posibles mejoras :
+    ☐ Mejorar la base de datos respecto a la parte de facturas
+    ☐ Cambiar el buscador de actas ya que solo busca por año y estoy obligando al cliente a que ponga una fecha concreta
+
+
   Angular material:
     ✔ Para editar el css del angular material hay que ir a styles.css, hay un ejemplo con el mat-tooltip @done(18-09-02 13:20)
     https://stackoverflow.com/questions/45777232/customize-angular-material-2-tooltip-styles?rq=1
@@ -29,6 +34,14 @@ Todo:
         --> IMPORTANTE <-- CADA VEZ QUE PASO EL RATON POR ENCIMA DEL ICONO AMPLIAR FACTURA EL METODO tipoFactura() SE EJECUTA MUCHISIMAS VECES
 
   Actas:
+    ✔ Validaciones del buscador @done(18-09-05 10:44)
+      ✔ Solo se puede introducir caracteres numericos @done(18-09-05 10:34)
+      ✔ Solo se puede introducir 4 numeros @done(18-09-05 10:34)
+      ✔ Como minimo hay que introducir 4 numeros @done(18-09-05 10:42)
+      ✔ El boton buscar se desabilita si las validaciones anteriores no se cumplen @done(18-09-05 10:42)
+      ✔ Salen mensajes de error si no se cumplen las validaciones anteriores @done(18-09-05 10:43)
+        +info --> https://material.angular.io/components/input/overview
+        Uso el componente mat-error de angular material
     ✔ Hacer modelo acta @done(18-08-25 18:08)
     ✘ Hacer un boton que cuando se pulse aparezca un hover con un resumen de la factura entera @cancelled(18-08-28 11:12)
       Bulma css no tiene js asi que no se como añadirlo
