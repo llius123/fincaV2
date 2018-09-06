@@ -16,7 +16,7 @@ Todo:
     ☐ Hacer un cambio general de los inputs o demas cosas de bulma css a angular material
     ☐ Cambiar los estilos, del css al sass, asi para el color general de la aplicacion usaria una variable y no repetiria tanto codigo
     ☐ Mejorar la base de datos respecto a la parte de facturas
-    ☐ Cambiar el buscador de actas ya que solo busca por año y estoy obligando al cliente a que ponga una fecha concreta
+    ✔ Cambiar el buscador de actas ya que solo busca por año y estoy obligando al cliente a que ponga una fecha concreta @done(18-09-06 19:09)
     ☐ Usar los reactive forms, en el caso del buscador por fecha serviria de mucho ya que no tendria que repetir codigo
     // +info --> https://angular.io/guide/reactive-form
     ☐ Para la parte de sqlFacturas
@@ -36,23 +36,25 @@ Todo:
       ✔ Importar el MatInputModule si se va a usar algun input, tipo el date @done(18-09-03 17:08)
 
   Incidencias:
-    ☐ Hacer modelo
-    ☐ Listar todas las incidencias
-    ☐ Hacer buscador
-    ☐ Mejorar base de datos:
-      ☐ Añadir una columna de si la incidencia ha sido resuelta
-    ☐ Hacer backend
+    ✔ Hacer modelo @done(18-09-06 19:09)
+    ✘ Listar todas las incidencias @cancelled(18-09-06 19:09)
+    ✘ Hacer buscador @cancelled(18-09-06 19:09)
+    ✘ Mejorar base de datos: @cancelled(18-09-06 19:09)
+      ✘ Añadir una columna de si la incidencia ha sido resuelta @cancelled(18-09-06 19:09)
+    ✘ Hacer backend @cancelled(18-09-06 19:09)
+    ✔ Hacer un formulario que envie la incidencia a la base de datos @done(18-09-06 19:10)
     
   Facturas:
     ✔ Hacer modelo factura @done(18-09-02 09:40)
     ✔ Listar todas las facturas @done(18-09-03 12:38)
-    ☐ Hacer buscador de facturas
-      ☐ Por fecha
-      ☐ Por tipo
-    ☐ Bug :
-      ☐ SUPER BUGAZO
+    ✔ Hacer buscador de facturas @done(18-09-06 19:10)
+      ✔ Por fecha @done(18-09-06 19:10)
+      ✔ Por tipo @done(18-09-06 19:10)
+    ✘ Bug : @cancelled(18-09-06 19:10)
+      ✘ SUPER BUGAZO @cancelled(18-09-06 19:10)
         --> IMPORTANTE <-- CADA VEZ QUE PASO EL RATON POR ENCIMA DEL ICONO AMPLIAR FACTURA EL METODO tipoFactura() SE EJECUTA MUCHISIMAS VECES
-
+        Hecho de otra forma
+        
   Actas:
     ✔ Validaciones del buscador @done(18-09-05 10:44)
       ✔ Solo se puede introducir caracteres numericos @done(18-09-05 10:34)

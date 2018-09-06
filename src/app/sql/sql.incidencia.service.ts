@@ -13,7 +13,6 @@ export class SqlIncidencia {
 
     nuevaIncidencia(incidencia: ModeloIncidenciaCrear) {
         this.url = `${this.api}/nuevaIncidencia/${incidencia.puerta}/${incidencia.email}/${incidencia.telefono}/${incidencia.descripcion}`;
-        console.log(this.url)
         return this.http.post(this.url, incidencia)
     }
 }

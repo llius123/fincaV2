@@ -4,6 +4,8 @@ import { ErrorStateMatcher } from "@angular/material";
 import { ModeloIncidenciaCrear } from "../models/model.service";
 import { SqlIncidencia } from "../sql/sql.incidencia.service";
 
+import { ToastrService } from 'ngx-toastr';
+
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
@@ -25,6 +27,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ["./incidencias.component.css"]
 })
 export class IncidenciasComponent implements OnInit {
+
+  constructor(private sql: SqlIncidencia, private toastr: ToastrService) { }
+
   /*Esto va con la clase implementada arriba, mas info: https://material.angular.io/components/input/overview */
   matcher = new MyErrorStateMatcher();
 
@@ -46,7 +51,6 @@ export class IncidenciasComponent implements OnInit {
 
   incidencia: ModeloIncidenciaCrear;
 
-  constructor(private sql:SqlIncidencia) { }
 
   ngOnInit() { }
 
@@ -57,7 +61,12 @@ export class IncidenciasComponent implements OnInit {
       this.formControlIncidencia.get('formControlInputTelefono').value,
       this.formControlIncidencia.get('formControlInputDescripcion').value
     )
-    this.sql.nuevaIncidencia(this.incidencia).subscribe();
+    this.sql.nuevaIncidencia(this.incidencia).subscribe(() => {
+      this.toastr.success("Incidencia enviada con exito!","", {
+        "closeButton": true,
+        "progressBar": true,
+      });
+    });
   }
   limpiar() {
     this.formControlIncidencia.reset()
