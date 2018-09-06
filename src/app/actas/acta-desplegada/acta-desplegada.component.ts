@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActaDesplegada } from '../../models/acta-desplegada.service';
 import { ModeloActas } from '../../models/model.service';
-import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-acta-desplegada',

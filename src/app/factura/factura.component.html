@@ -12,12 +12,11 @@
       <div *ngIf="tipoFacturaBuscar">
         <div class="columns">
           <div class="column is-one-fifth" id="margenes">
-            <div class="select">
-              <select [formControl]="formControlSelect" style="width: 160px">
-                <option [value]="tipo" *ngFor="let tipo of arrayTipoFactura" style="width: 160px"> {{tipo}}</option>
-              </select>
-              <p class="help is-danger" *ngIf="formControlSelect.value === null && !formControlSelect.touched">Selecciona un tipo de factura</p>
-            </div>
+            <mat-form-field>
+              <mat-select placeholder="Tipo" [formControl]="formControlSelect">
+                <mat-option [value]="tipo" *ngFor="let tipo of arrayTipoFactura">{{ tipo }}</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
           <div class="column" id="margenes">
             <button id="margenes" [disabled]="formControlSelect.value === null" style="border-color: black;" class="button is-light is-medium hvr-botones-usuario"

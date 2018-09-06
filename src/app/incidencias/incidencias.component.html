@@ -1,27 +1,39 @@
 <div class="container" [formGroup]="formControlIncidencia">
   <div class="columns">
     <mat-form-field id="matEstilos">
-      <input matInput placeholder="Puerta" formControlName="formControlInputPuerta">
+      <input matInput placeholder="Puerta" formControlName="formControlInputPuerta" [errorStateMatcher]="matcher">
+      <mat-error>
+        El campo puerta no puede estar vacio
+      </mat-error>
     </mat-form-field>
   </div>
   <div class="columns">
     <mat-form-field id="matEstilos">
-      <input matInput placeholder="Email" formControlName="formControlInputEmail">
+      <input matInput placeholder="Email" formControlName="formControlInputEmail" [errorStateMatcher]="matcher">
+      <mat-error>
+        El campo email no puede estar vacio
+      </mat-error>
     </mat-form-field>
   </div>
   <div class="columns">
     <mat-form-field id="matEstilos">
-      <input matInput placeholder="Telefono" formControlName="formControlInputTelefono">
+      <input matInput placeholder="Telefono" formControlName="formControlInputTelefono" [errorStateMatcher]="matcher">
+      <mat-error>
+        El campo telefono no puede estar vacio
+      </mat-error>
     </mat-form-field>
   </div>
   <div class="columns">
     <mat-form-field id="matEstilos">
-      <textarea matInput placeholder="Descripcion de la incidencia" formControlName="formControlInputDescripcion"></textarea>
+      <textarea rows="5" matInput placeholder="Descripcion de la incidencia" formControlName="formControlInputDescripcion" [errorStateMatcher]="matcher"></textarea>
+      <mat-error>
+        El campo descripcion no puede estar vacio
+      </mat-error>
     </mat-form-field>
   </div>
-  <div class="columns" >
-    <button class="button is-light is-medium hvr-botones-usuario" style="margin-left: 40%;border: 1px solid black;" (click)="enviar()">
-      Buscar
+  <div class="columns" style="margin-top: 1%;">
+    <button [disabled]="!formControlIncidencia.valid" class="button is-light is-medium hvr-botones-usuario" style="margin-left: 40%;border: 1px solid black;" (click)="enviar()">
+      Enviar
     </button>
     <button class="button is-light is-medium hvr-botones-usuario-cancelar" style="border: 1px solid black;margin-left: 1%;" (click)="limpiar()">
       Limpiar

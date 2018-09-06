@@ -1,10 +1,10 @@
-import { ModeloActas, ModeloFactura } from "./../models/model.service";
-import { Injectable } from "../../../node_modules/@angular/core";
-import { HttpClient } from "../../../node_modules/@angular/common/http";
-import { map } from "../../../node_modules/rxjs/operators";
+import { ModeloActas, ModeloFactura } from "../models/model.service";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
 import * as moment from "moment";
-import { Observable } from "../../../node_modules/rxjs";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class SqlFactura {

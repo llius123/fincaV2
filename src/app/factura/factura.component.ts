@@ -1,8 +1,8 @@
-import { ModeloFactura } from "./../models/model.service";
+import { ModeloFactura } from "../models/model.service";
 import { map } from "rxjs/operators";
 import { Component, OnInit } from "@angular/core";
 import { SqlFactura } from "../sql/sq.factura.service";
-import { Router, ActivatedRoute } from "../../../node_modules/@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { FacturaDesplegada } from "../models/factura-desplegada.service";
 import {
   FormControl,
@@ -156,6 +156,7 @@ export class FacturaComponent implements OnInit {
   limpiar(){
     this.anyoFormControl.reset();
     this.anyoFormContro2.reset();
+    this.formControlSelect.reset();
     this.todasLasFacturas();
   }
 }

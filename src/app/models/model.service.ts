@@ -48,3 +48,12 @@ export class ModeloFactura {
         public cuota_retencion: number
     ) {}
 }
+
+export class ModeloIncidenciaCrear {
+    constructor(
+        public puerta: string,
+        public email: string,
+        public telefono: string,
+        public descripcion: string
+    ) {}
+}

@@ -1,10 +1,10 @@
-import { ActaDesplegada } from './../models/acta-desplegada.service';
+import { ActaDesplegada } from '../models/acta-desplegada.service';
 import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { SqlActas } from '../sql/sql.actas.service';
-import { Subscription } from '../../../node_modules/rxjs';
+import { Subscription } from 'rxjs';
 
-import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ModeloActas } from '../models/model.service';
 
 import { ErrorStateMatcher } from '@angular/material/core';

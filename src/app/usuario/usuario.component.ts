@@ -1,10 +1,10 @@
-import { UsuarioLoggeado } from './../models/usuarioLoggeado.service';
-import { ModeloUsuario } from './../models/model.service';
+import { UsuarioLoggeado } from '../models/usuarioLoggeado.service';
+import { ModeloUsuario } from '../models/model.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '../../../node_modules/@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { SqlQuerys } from '../sql/sql.loggin.service';
-import { ToastrService } from '../../../node_modules/ngx-toastr';
-import { map } from '../../../node_modules/rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+import { map } from 'rxjs/operators';
 import { SqlUsuario } from '../sql/sql.usuario.service';
 
 @Component({

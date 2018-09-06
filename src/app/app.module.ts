@@ -34,6 +34,7 @@ import { ActaDesplegada } from "./models/acta-desplegada.service";
 import { SqlFactura } from "./sql/sq.factura.service";
 import { FacturaDesplegadaComponent } from './factura/factura-desplegada/factura-desplegada.component';
 import { FacturaDesplegada } from "./models/factura-desplegada.service";
+import { SqlIncidencia } from "./sql/sql.incidencia.service";
 
 
 
@@ -65,7 +66,7 @@ import { FacturaDesplegada } from "./models/factura-desplegada.service";
     AppRoute,
     ToastrModule.forRoot()
   ],
-  providers: [SqlQuerys, SqlActas, SqlUsuario, SqlFactura, ModeloLoggin, UsuarioLoggeado, ActaDesplegada, FacturaDesplegada],
+  providers: [SqlIncidencia, SqlQuerys, SqlActas, SqlUsuario, SqlFactura, ModeloLoggin, UsuarioLoggeado, ActaDesplegada, FacturaDesplegada],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ const cors = require("cors");
 const usuario = require('./Usuario/usuario.api')
 const actas = require('./Actas/actas.api')
 const factura = require('./Factura/factura.api')
-
+const incidencia = require('./Incidencia/incidencia.api')
 process.setMaxListeners(0);
 connection.connect(function (err) {
   if (err) throw err;
@@ -39,7 +39,10 @@ actas.listaTodasActas(app)
 actas.busquedaFecha(app);
 
 //Factura
-factura.todasFacturas(app)
-factura.todosLosTipos(app)
-factura.buscarPorTipo(app)
-factura.buscarPorFecha(app)
+factura.todasFacturas(app);
+factura.todosLosTipos(app);
+factura.buscarPorTipo(app);
+factura.buscarPorFecha(app);
+
+//Incidencias
+incidencia.nuevaIncidencia(app);

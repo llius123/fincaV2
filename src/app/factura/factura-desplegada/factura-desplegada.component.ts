@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacturaDesplegada } from '../../models/factura-desplegada.service';
 import { ModeloFactura } from '../../models/model.service';
-import { Router } from '../../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-factura-desplegada',
