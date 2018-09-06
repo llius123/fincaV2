@@ -1,3 +1,30 @@
-<p>
-  incidencias works!
-</p>
+<div class="container" [formGroup]="formControlIncidencia">
+  <div class="columns">
+    <mat-form-field id="matEstilos">
+      <input matInput placeholder="Puerta" formControlName="formControlInputPuerta">
+    </mat-form-field>
+  </div>
+  <div class="columns">
+    <mat-form-field id="matEstilos">
+      <input matInput placeholder="Email" formControlName="formControlInputEmail">
+    </mat-form-field>
+  </div>
+  <div class="columns">
+    <mat-form-field id="matEstilos">
+      <input matInput placeholder="Telefono" formControlName="formControlInputTelefono">
+    </mat-form-field>
+  </div>
+  <div class="columns">
+    <mat-form-field id="matEstilos">
+      <textarea matInput placeholder="Descripcion de la incidencia" formControlName="formControlInputDescripcion"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="columns" >
+    <button class="button is-light is-medium hvr-botones-usuario" style="margin-left: 40%;border: 1px solid black;" (click)="enviar()">
+      Buscar
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario-cancelar" style="border: 1px solid black;margin-left: 1%;" (click)="limpiar()">
+      Limpiar
+    </button>
+  </div>
+</div>
