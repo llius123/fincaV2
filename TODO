@@ -20,10 +20,10 @@ Todo:
     ☐ Usar los reactive forms, en el caso del buscador por fecha serviria de mucho ya que no tendria que repetir codigo
     // +info --> https://angular.io/guide/reactive-form
     ☐ Para la parte de sqlFacturas
-      ☐ Cuando listo todas las facturas hage una consulta a la base de datos donde busco el tipo de lo guardo en un array,deberia quitar eso y hacer una consulta multitable para asi tener el tipo de factura directamente 
-    
-    ☐ Cambiar incidencias a avisos
-    ☐ Añadir una tabla de noticias a la base de datos
+      ☐ Cuando listo todas las facturas hage una consulta a la base de datos donde busco el tipo de lo guardo en un array,deberia quitar eso y hacer una consulta multitable para asi tener el tipo de factura directamente
+    ✘ Cambiar incidencias a avisos @cancelled(18-09-06 11:01)
+    Incidencias es solamente un formualrio para enviar incidencias al administrador
+    ✔ Añadir una tabla de noticias a la base de datos @done(18-09-06 11:02)
     ☐ Añadir al incio la tabla de noticias
 
 

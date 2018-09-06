@@ -79,7 +79,6 @@ CREATE TABLE IF NOT EXISTS `incidencia` (
 -- Dumping structure for table fincav2.noticias
 CREATE TABLE IF NOT EXISTS `noticias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(50) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`id`)
