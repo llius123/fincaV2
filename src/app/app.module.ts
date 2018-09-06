@@ -7,8 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { MatTooltipModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import {
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSelectModule
+} from "@angular/material";
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { LogginComponent } from './loggin/loggin.component';
@@ -44,6 +50,8 @@ import { FacturaDesplegada } from "./models/factura-desplegada.service";
     FacturaDesplegadaComponent
   ],
   imports: [
+    MatSelectModule,
+    MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
     MatDatepickerModule,

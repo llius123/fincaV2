@@ -48,7 +48,7 @@ exports.buscarPorTipo = function (app) {
 exports.buscarPorFecha = function(app) {
   app.get("/buscarPorFecha/:fecha1/:fecha2", function(req, res) {
     connection.query(
-      "select * from factura where fecha between ? and ?'",
+      "select * from factura where fecha between ? and ?",
       [req.params.fecha1,req.params.fecha2],
       function(error, result) {
         if (error) console.log(error);

@@ -15,3 +15,7 @@ hr {
   font-family: 'Montserrat', sans-serif;
   border: 1px solid black;
 }
+
+#margenes {
+    margin: auto;
+}

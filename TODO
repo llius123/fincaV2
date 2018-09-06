@@ -13,13 +13,18 @@ Todo:
   ☐ ---> HACER CONSULTAS MULTITABLAS, QUE SIEMPRE SE ME OLVIDA <--- ACORDARSE DE ESTO QUE SIEMPRE SE ME OLVIDA COÑO
 
   Posibles mejoras :
+    ☐ Hacer un cambio general de los inputs o demas cosas de bulma css a angular material
     ☐ Cambiar los estilos, del css al sass, asi para el color general de la aplicacion usaria una variable y no repetiria tanto codigo
     ☐ Mejorar la base de datos respecto a la parte de facturas
     ☐ Cambiar el buscador de actas ya que solo busca por año y estoy obligando al cliente a que ponga una fecha concreta
     ☐ Usar los reactive forms, en el caso del buscador por fecha serviria de mucho ya que no tendria que repetir codigo
     // +info --> https://angular.io/guide/reactive-form
-    ☐ Para la aprte de sqlFacturas
+    ☐ Para la parte de sqlFacturas
       ☐ Cuando listo todas las facturas hage una consulta a la base de datos donde busco el tipo de lo guardo en un array,deberia quitar eso y hacer una consulta multitable para asi tener el tipo de factura directamente 
+    
+    ☐ Cambiar incidencias a avisos
+    ☐ Añadir una tabla de noticias a la base de datos
+    ☐ Añadir al incio la tabla de noticias
 
 
   Angular material:

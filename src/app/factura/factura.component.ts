@@ -54,8 +54,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class FacturaComponent implements OnInit {
   formControlSelect = new FormControl();
   /*Esto va con la clase implementada arriba, mas info: https://material.angular.io/components/input/overview */
-  matcher1 = new MyErrorStateMatcher();
-  matcher2 = new MyErrorStateMatcher();
+  matcher = new MyErrorStateMatcher();
   anyoFormControl = new FormControl("", [
     Validators.required
   ]);
@@ -77,21 +76,25 @@ export class FacturaComponent implements OnInit {
   arrayTipoFactura = [];
 
   ngOnInit() {
+    this.todasLasFacturas();
+    this.todosLosTipos();
+
+
+  }
+  todasLasFacturas() {
     this.sqlFactura
       .todasFacturas()
-      .pipe(
-        map((data: any) => {
+      .pipe(map((data: any) => {
           this.cargarFacturas(data);
-        })
-      )
+        }))
       .subscribe();
+  }
+  todosLosTipos() {
     this.sqlFactura
       .todosLosTipos()
-      .pipe(
-        map(data => {
+      .pipe(map(data => {
           this.cargarTipoFacturas(data);
-        })
-      )
+        }))
       .subscribe();
   }
 
@@ -134,28 +137,25 @@ export class FacturaComponent implements OnInit {
     }
   }
 
-  buscar(data: any, tipo: string) {
-    switch (tipo) {
-      case "fecha":
-        this.sqlFactura
-          .buscarPorFecha(data)
-          .pipe(
-            map((data: any) => {
-              this.cargarFacturas(data);
-            })
-          )
-          .subscribe();
-        break;
-      case "tipo":
-        this.sqlFactura
-          .buscarPorTipo(data)
-          .pipe(
-            map((data: any) => {
-              this.cargarFacturas(data);
-            })
-          )
-          .subscribe();
-        break;
-    }
+  buscarTipo(data: any) {
+    this.sqlFactura.buscarPorTipo(data).pipe(map(
+      (data) => {
+        this.cargarFacturas(data)
+      }
+    )).subscribe()
+  }
+  buscarFecha(fecha1: any, fecha2: any) {
+    const fechaFormateada1 = `${fecha1.year}-${fecha1.month}-${fecha1.date}`;
+    const fechaFormateada2 = `${fecha2.year}-${fecha2.month}-${fecha2.date}`;
+    this.sqlFactura.buscarPorFecha(fechaFormateada1,fechaFormateada2).pipe(map(
+      (data) => {
+        this.cargarFacturas(data)
+      }
+    )).subscribe()
+  }
+  limpiar(){
+    this.anyoFormControl.reset();
+    this.anyoFormContro2.reset();
+    this.todasLasFacturas();
   }
 }
