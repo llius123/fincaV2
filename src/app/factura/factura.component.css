@@ -1,18 +1,17 @@
 hr {
-    width: 79px;
-    margin-top: 0px;
-    background-color: #93e4ff;
+  background-color: #93e4ff;
+  margin-top: 0%;
 }
 
 #cssBox {
-    width: 15%;
-    float: left;
-    margin-left: 1%;
-    margin-right: 1%;
-    width: 200px;
+  width: 15%;
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 200px;
 }
 
-#actualizar{
+#actualizar {
   margin-left: 3px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }

@@ -57,7 +57,7 @@ export class LogginComponent implements OnInit {
       this.errorLoggin = true;
     } else {
       this.backUp.usuarioLoggeadoSave(user);
-      this.router.navigate(['panel-personal'])
+      this.router.navigate(['panel-personal/noticias'])
     }
   }
 

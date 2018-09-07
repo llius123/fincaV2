@@ -35,6 +35,8 @@ import { SqlFactura } from "./sql/sq.factura.service";
 import { FacturaDesplegadaComponent } from './factura/factura-desplegada/factura-desplegada.component';
 import { FacturaDesplegada } from "./models/factura-desplegada.service";
 import { SqlIncidencia } from "./sql/sql.incidencia.service";
+import { SqlNoticias } from "./sql/sql.noticias.service";
+import { NoticiaComponent } from './noticia/noticia.component';
 
 
 
@@ -48,7 +50,8 @@ import { SqlIncidencia } from "./sql/sql.incidencia.service";
     IncidenciasComponent,
     UsuarioComponent,
     ActaDesplegadaComponent,
-    FacturaDesplegadaComponent
+    FacturaDesplegadaComponent,
+    NoticiaComponent
   ],
   imports: [
     MatSelectModule,
@@ -66,7 +69,7 @@ import { SqlIncidencia } from "./sql/sql.incidencia.service";
     AppRoute,
     ToastrModule.forRoot()
   ],
-  providers: [SqlIncidencia, SqlQuerys, SqlActas, SqlUsuario, SqlFactura, ModeloLoggin, UsuarioLoggeado, ActaDesplegada, FacturaDesplegada],
+  providers: [SqlNoticias, SqlIncidencia, SqlQuerys, SqlActas, SqlUsuario, SqlFactura, ModeloLoggin, UsuarioLoggeado, ActaDesplegada, FacturaDesplegada],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

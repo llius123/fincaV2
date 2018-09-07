@@ -8,6 +8,7 @@ import { IncidenciasComponent } from './incidencias/incidencias.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ActaDesplegadaComponent } from './actas/acta-desplegada/acta-desplegada.component';
 import { FacturaDesplegadaComponent } from './factura/factura-desplegada/factura-desplegada.component';
+import { NoticiaComponent } from './noticia/noticia.component';
 
 
 
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LogginComponent },
     {
         path: 'panel-personal', component: PanelUsuarioComponent, children: [
+            { path: 'noticias', component: NoticiaComponent},
             { path: 'actas', component: ActasComponent },
             { path: 'facturas', component: FacturaComponent },
             { path: 'incidencias', component: IncidenciasComponent },
