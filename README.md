@@ -19,20 +19,30 @@ Mariadb V10.1
 La parte del usuario esta completa y funcionando.
 <br />
 -Loggin
+<br />
 -Noticias
+<br />
 -Actas
+<br />
 -Facturas
+<br />
 -Incidencias
+<br />
 -Panel Personal
 
 
 ## Mejoras para versiones posteriores
 
 En el archivo TODO esta mas explicado pero en resumidas cuentas es esto:
+<br />
 -Añadir la opcion de descargar factura/acta en pdf
+<br />
 -Cargar imagenes de la base de datos en la aplicacion
+<br />
 -Mejorar la interfaz grafica en el apartado de factura/acta
+<br />
 -Cambiar los inputs del panel personal
+
 
 
 ## Version 0.2.0 (en proceso)
