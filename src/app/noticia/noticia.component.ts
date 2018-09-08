@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SqlNoticias } from '../sql/sql.noticias.service';
-import { map } from 'rxjs/operators';
+import { map, delay } from 'rxjs/operators';
 import { ModeloNoticia } from '../models/model.service';
 
 @Component({
@@ -15,11 +15,16 @@ export class NoticiaComponent implements OnInit {
   noticias;
 
   ngOnInit() {
-    this.sql.todasNoticias().pipe(map(
+    this.cargarNoticias();
+  }
+
+  cargarNoticias() {
+    this.sql.todasNoticias().subscribe(
       (data) => {
         this.noticias = data;
       }
-    )) .subscribe()
+    )
   }
+
 
 }

@@ -24,9 +24,14 @@ Todo:
     ✘ Cambiar incidencias a avisos @cancelled(18-09-06 11:01)
     Incidencias es solamente un formualrio para enviar incidencias al administrador
     ✔ Añadir una tabla de noticias a la base de datos @done(18-09-06 11:02)
-    ☐ Añadir al incio la tabla de noticias
+    ✔ Añadir al incio la tabla de noticias @done(18-09-08 09:53)
     ☐ Añadir esto al proyecto en general
+    Hacer que la carga de datos sea asyncrona con la carga del componente, osea que el componente no carge hasta que no tenga todos los datos
     https://shermandigital.com/blog/wait-for-data-before-rendering-views-in-angular-2/
+    ☐ Revisar y mirar si en algun ngOnInit se hace un .subscription(), y si ocurre añadir el ngOnDestroy y destruir el subscription cada vez que cambiamos de componente
+    ☐ Informacion importante sobre las pipes y los subscribers (Revisar las consultas sql y modificarlas dependiendo de lo de abajo)
+    Creo que cuando obtengo un objeto de la base de datos que necesita ser modificado, el caso de la fecha esta bien utilizar el pipe, pero no estoy del todo seguro
+    https://stackoverflow.com/questions/51269372/difference-beetwen-pipe-and-subscribe
 
 
   Angular material:
@@ -69,7 +74,7 @@ Todo:
     ✔ Hacer modelo acta @done(18-08-25 18:08)
     ✘ Hacer un boton que cuando se pulse aparezca un hover con un resumen de la factura entera @cancelled(18-08-28 11:12)
       Bulma css no tiene js asi que no se como añadirlo
-    ☐ Backend
+    ✘ Backend @cancelled(18-09-08 10:25)
     ✔ Listar todas las actas @done(18-08-28 11:12)
     ✔ Buscador de actas @done(18-09-04 10:09)
       ✔ Busco por año, aunque el datepicker te pida que introduzcas el dia y mes da igual @done(18-09-04 10:09)
@@ -77,8 +82,8 @@ Todo:
     ✘ Usar modales para mostrar el acta entera @cancelled(18-08-28 11:12)
       La enseño en el componente acta-desplegada
     ✔ Añadir css @done(18-08-28 13:47)
-    ☐ Bugs:
-      ☐ Cuando listo todas las actas, cuando saco la fecha la libreria momentjs le resta un mes y no entiendo el porque
+    ✔ Bugs: @done(18-09-08 10:26)
+      ✘ Cuando listo todas las actas, cuando saco la fecha la libreria momentjs le resta un mes y no entiendo el porque @cancelled(18-09-08 10:26)
   
   Loggin:
     ✔ Frontend loggin @done(18-08-24 11:23)
@@ -90,19 +95,19 @@ Todo:
     ✔ Actualizar datos en la base de datos @done(18-08-25 15:31)
     ✔ Actualizar el objeto general con los datos del usuario registrado @done(18-08-25 15:32)
     ✔ Añadido css y ha quedado muy bonito @done(18-08-25 15:33)
-    ☐ Validaciones
+    ✔ Validaciones @done(18-09-08 10:26)
       ✔ No puede estar en blanco @done(18-08-25 15:32)
-      ☐ Añadir expresiones regulares
-    ☐ Bug:
+      ✘ Añadir expresiones regulares @cancelled(18-09-08 10:26)
+    ✔ Bug: @done(18-09-08 10:26)
       ✔ Si actualizo el usuario y luego le doy al boton cancelar se pone los datos antiguos, aunque en la bse de datos se han actualizado bien @done(18-08-26 09:57)
       //Lgo pasa con los subscribers() o tardan mucho o pasan a ejecutar la linea sigueinte sin haber acabado, no se que narices pasa
   
   Panel-Personal:
-    ☐ Añadir angular material tabs, es solo para que se vea mejor
+    ✘ Añadir angular material tabs, es solo para que se vea mejor @cancelled(18-09-08 10:26)
       https://material.angular.io/components/tabs/overview
     ✔ Hacer los links a los componentes actas,incidencias,usuario,facturas @done(18-08-24 17:39)
-    ☐ Añadir a la izquierda tu nombre de usuario
-    ☐ Rellenar cada componente 
+    ✘ Añadir a la izquierda tu nombre de usuario @cancelled(18-09-08 10:26)
+    ✔ Rellenar cada componente @done(18-09-08 10:26)
 
   Base de datos:
     ✔ Construir base de datos @done(18-08-23 22:46)

@@ -42,6 +42,22 @@
             </a>
           </div>
         </li>
+        <li id="marginLI" class="hvr-sweep-to-top" style="float: right;" *ngIf="esAdmin()">
+          <div (click)="administrador()">
+            <a>
+              <i class="fas  fa-unlock-alt" id="icono"></i>
+              Administrador
+            </a>
+          </div>
+        </li>
+        <li id="marginLI" class="hvr-sweep-to-top" style="float: right;">
+          <div (click)="desconectar()">
+            <a>
+              <i class="fas fa-sign-out-alt" id="icono"></i>
+              Desconectar
+            </a>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

@@ -11,7 +11,8 @@ import {
   MatTooltipModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -37,6 +38,7 @@ import { FacturaDesplegada } from "./models/factura-desplegada.service";
 import { SqlIncidencia } from "./sql/sql.incidencia.service";
 import { SqlNoticias } from "./sql/sql.noticias.service";
 import { NoticiaComponent } from './noticia/noticia.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 
 
@@ -51,9 +53,11 @@ import { NoticiaComponent } from './noticia/noticia.component';
     UsuarioComponent,
     ActaDesplegadaComponent,
     FacturaDesplegadaComponent,
-    NoticiaComponent
+    NoticiaComponent,
+    AdministradorComponent
   ],
   imports: [
+    MatProgressSpinnerModule,
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,

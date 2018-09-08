@@ -9,6 +9,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ActaDesplegadaComponent } from './actas/acta-desplegada/acta-desplegada.component';
 import { FacturaDesplegadaComponent } from './factura/factura-desplegada/factura-desplegada.component';
 import { NoticiaComponent } from './noticia/noticia.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 
 
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
             { path: 'incidencias', component: IncidenciasComponent },
             { path: 'panel_personal', component: UsuarioComponent },
             { path: 'actas/acta-desplegada', component: ActaDesplegadaComponent},
-            { path: 'facturas/factura-desplegada', component: FacturaDesplegadaComponent}
+            { path: 'facturas/factura-desplegada', component: FacturaDesplegadaComponent},
+            { path: 'administrador', component: AdministradorComponent}
         ]
     },
     { path: "**", redirectTo: "/login" }

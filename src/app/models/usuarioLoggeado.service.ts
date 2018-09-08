@@ -21,6 +21,20 @@ export class UsuarioLoggeado {
         }
     }
 
+    //Es admin el usuario
+    admin(): boolean{
+        if(this.user.administrador === 'S'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    //Desconectarse
+    desconectarse() {
+        this.user = null;
+    }
+    
     getUser(){
         return this.user;
     }

@@ -26,6 +26,10 @@ export class PanelUsuarioComponent implements OnInit {
       this.router.navigate(["login"]);
     }
   }
+
+  esAdmin() {
+    return this.backUp.admin()
+  }
   noticias() {
     this.router.navigate(['noticias'], {relativeTo: this.route});
   }
@@ -41,5 +45,12 @@ export class PanelUsuarioComponent implements OnInit {
   }
   panel_personal() {
     this.router.navigate(["panel_personal"], { relativeTo: this.route });
+  }
+  administrador() {
+    this.router.navigate(["administrador"], { relativeTo: this.route});
+  }
+  desconectar() {
+    this.backUp.desconectarse();
+    this.router.navigate(["login"]);
   }
 }
