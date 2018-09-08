@@ -12,6 +12,20 @@ Todo:
 
   ☐ ---> HACER CONSULTAS MULTITABLAS, QUE SIEMPRE SE ME OLVIDA <--- ACORDARSE DE ESTO QUE SIEMPRE SE ME OLVIDA COÑO
 
+  Bugs :
+    ☐ No entiendo este bug, no se como solucionarlo y no se como reproducirlo
+    PanelUsuarioComponent.html:45 ERROR TypeError: Cannot read property 'administrador' of undefined
+    at UsuarioLoggeado.push../src/app/models/usuarioLoggeado.service.ts.UsuarioLoggeado.admin (usuarioLoggeado.service.ts:26)
+    at PanelUsuarioComponent.push../src/app/panel-usuario/panel-usuario.component.ts.PanelUsuarioComponent.esAdmin (panel-usuario.component.ts:31)
+    at Object.eval [as updateDirectives] (PanelUsuarioComponent.html:45)
+    at Object.debugUpdateDirectives [as updateDirectives] (core.js:11061)
+    at checkAndUpdateView (core.js:10458)
+    at callViewAction (core.js:10699)
+    at execComponentViewsAction (core.js:10641)
+    at checkAndUpdateView (core.js:10464)
+    at callViewAction (core.js:10699)
+    at execEmbeddedViewsAction (core.js:10662)
+
   Posibles mejoras :
     ☐ Hacer un cambio general de los inputs o demas cosas de bulma css a angular material
     ☐ Cambiar los estilos, del css al sass, asi para el color general de la aplicacion usaria una variable y no repetiria tanto codigo
