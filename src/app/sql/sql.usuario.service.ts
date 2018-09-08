@@ -25,7 +25,7 @@ export class SqlUsuario {
             .pipe(
                 map((data) => {
                     const usuario = new ModeloUsuario(
-                        data[0].id, data[0].nombre, data[0].telefono, data[0].puerta, data[0].usuario, data[0].contrasenya, data[0].tipo_id
+                        data[0].id, data[0].nombre, data[0].telefono, data[0].puerta, data[0].usuario, data[0].contrasenya, data[0].tipo_id, data[0].administrador
                     );
                     return usuario
                 })

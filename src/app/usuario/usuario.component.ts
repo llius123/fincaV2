@@ -88,7 +88,8 @@ export class UsuarioComponent implements OnInit {
       this.formularioUsuario.get('puerta').value,
       this.formularioUsuario.get('usuario').value,
       this.formularioUsuario.get('contrasenya').value,
-      this.usuarioLoggeadoInfo.tipo_id
+      this.usuarioLoggeadoInfo.tipo_id,
+      this.usuarioLoggeadoInfo.administrador
     )
     this.sql.actualizarUsuario(this.actualizarUsuario)
       .pipe(

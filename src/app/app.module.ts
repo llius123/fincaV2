@@ -8,14 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ToastrModule } from 'ngx-toastr';
 
 import {
+  MatFormFieldModule,
+  MatInputModule,
   MatTooltipModule,
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatExpansionModule,
+  MatIconModule
 } from "@angular/material";
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { LogginComponent } from './loggin/loggin.component';
@@ -57,6 +59,8 @@ import { AdministradorComponent } from './administrador/administrador.component'
     AdministradorComponent
   ],
   imports: [
+    MatIconModule,
+    MatExpansionModule,
     MatProgressSpinnerModule,
     MatSelectModule,
     MatFormFieldModule,

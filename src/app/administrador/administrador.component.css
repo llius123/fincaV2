@@ -1,0 +1,12 @@
+#estiloDesplegable {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#botonFontFamily {
+    margin: 1%;
+    border: 1px solid black;
+    height: 0%;
+}

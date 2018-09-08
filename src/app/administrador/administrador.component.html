@@ -1,3 +1,94 @@
-<p>
-  administrador works!
-</p>
+<mat-accordion>
+  <mat-expansion-panel id="estiloDesplegable">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>
+          <i class="fas fa-book-open" id="icono"></i>
+        </mat-icon>
+        Actas
+      </mat-panel-title>
+      <mat-panel-description>
+        Crear/Editar/Eliminar actas
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="crear('acta')">
+      Crear
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="editar('acta')">
+      Editar
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="eliminar('acta')">
+      Eliminar
+    </button>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="estiloDesplegable">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>
+          <i class="fas fa-book-open" id="icono"></i>
+        </mat-icon>
+        Facturas
+      </mat-panel-title>
+      <mat-panel-description>
+        Crear/Editar/Eliminar factura
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="crear('factura')">
+      Crear
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="editar('factura')">
+      Editar
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="eliminar('factura')">
+      Eliminar
+    </button>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="estiloDesplegable">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>
+          <i class="fas fa-exclamation-circle" id="icono"></i>
+        </mat-icon>
+        Incidencias
+      </mat-panel-title>
+      <mat-panel-description>
+        Crear/Editar/Eliminar incidencia
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="crear('incidencia')">
+      Crear
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="editar('incidencia')">
+      Editar
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="eliminar('incidencia')">
+      Eliminar
+    </button>
+  </mat-expansion-panel>
+  <mat-expansion-panel id="estiloDesplegable">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>
+          <i class="fas fa-user" id="icono"></i>
+        </mat-icon>
+        Usuario
+      </mat-panel-title>
+      <mat-panel-description>
+        Crear/Editar/Eliminar usuarios
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="crear('usuario')">
+      Crear
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="editar('usuario')">
+      Editar
+    </button>
+    <button class="button is-light is-medium hvr-botones-usuario" id="botonFontFamily" (click)="eliminar('usuario')">
+      Eliminar
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,6 +1,10 @@
 /*Angular material css */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+/*Mat expansion panel modificado */
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused,.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused,.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
+    background: #93e4ff
+}
 
 /*Modificando los estilos del DatePicker */
 .mat-form-field.mat-focused .mat-form-field-ripple {
