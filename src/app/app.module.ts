@@ -41,6 +41,10 @@ import { SqlIncidencia } from "./sql/sql.incidencia.service";
 import { SqlNoticias } from "./sql/sql.noticias.service";
 import { NoticiaComponent } from './noticia/noticia.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { AdminActaComponent } from './administrador/admin-acta/admin-acta.component';
+import { AdminFacturaComponent } from './administrador/admin-factura/admin-factura.component';
+import { AdminIncidenciaComponent } from './administrador/admin-incidencia/admin-incidencia.component';
+import { AdminUsuarioComponent } from './administrador/admin-usuario/admin-usuario.component';
 
 
 
@@ -56,7 +60,11 @@ import { AdministradorComponent } from './administrador/administrador.component'
     ActaDesplegadaComponent,
     FacturaDesplegadaComponent,
     NoticiaComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    AdminActaComponent,
+    AdminFacturaComponent,
+    AdminIncidenciaComponent,
+    AdminUsuarioComponent
   ],
   imports: [
     MatIconModule,

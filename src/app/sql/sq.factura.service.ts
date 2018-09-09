@@ -5,6 +5,7 @@ import { map } from "rxjs/operators";
 
 import * as moment from "moment";
 import { Observable } from "rxjs";
+import { ResponseContentType } from "../../../node_modules/@angular/http";
 
 @Injectable()
 export class SqlFactura {
@@ -153,5 +154,10 @@ export class SqlFactura {
         return this.arrayTodasFacturas;
       })
     );
+  }
+
+  foto(): Observable<Blob>{
+    this.url = `${this.api}/foto`;
+    return this.http.get(this.url, { responseType: 'blob'});
   }
 }

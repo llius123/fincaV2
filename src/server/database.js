@@ -46,6 +46,7 @@ factura.todasFacturas(app);
 factura.todosLosTipos(app);
 factura.buscarPorTipo(app);
 factura.buscarPorFecha(app);
+factura.foto(app);
 
 //Incidencias
 incidencia.nuevaIncidencia(app);

@@ -10,6 +10,10 @@ import { ActaDesplegadaComponent } from './actas/acta-desplegada/acta-desplegada
 import { FacturaDesplegadaComponent } from './factura/factura-desplegada/factura-desplegada.component';
 import { NoticiaComponent } from './noticia/noticia.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { AdminActaComponent } from './administrador/admin-acta/admin-acta.component';
+import { AdminFacturaComponent } from './administrador/admin-factura/admin-factura.component';
+import { AdminIncidenciaComponent } from './administrador/admin-incidencia/admin-incidencia.component';
+import { AdminUsuarioComponent } from './administrador/admin-usuario/admin-usuario.component';
 
 
 
@@ -25,7 +29,11 @@ const appRoutes: Routes = [
             { path: 'panel_personal', component: UsuarioComponent },
             { path: 'actas/acta-desplegada', component: ActaDesplegadaComponent},
             { path: 'facturas/factura-desplegada', component: FacturaDesplegadaComponent},
-            { path: 'administrador', component: AdministradorComponent}
+            { path: 'administrador', component: AdministradorComponent},
+            { path: 'administrador/acta/:accion', component: AdminActaComponent},
+            { path: 'administrador/factura/:accion', component: AdminFacturaComponent },
+            { path: 'administrador/incidencia/:accion', component: AdminIncidenciaComponent },
+            { path: 'administrador/usuario/:accion', component: AdminUsuarioComponent }
         ]
     },
     { path: "**", redirectTo: "/login" }

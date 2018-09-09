@@ -57,3 +57,14 @@ exports.buscarPorFecha = function(app) {
     );
   });
 };
+
+exports.foto = function(app) {
+    app.get("/foto", function(req, res) {
+        connection.query(
+            "select imagen_factura from factura where id = 5 ",
+            function (error, result) {
+                res.end(res.json(result))
+            }
+        )
+    })
+}

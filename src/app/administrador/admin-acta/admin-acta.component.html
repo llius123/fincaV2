@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="volver()">
+        Volver
+      </button>
+    </div>
+  </div>
+  <div *ngIf="listaBoolean.crear" [formGroup]="crearActa" style="margin-left: 35%;">
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <input matInput placeholder="Lugar" formControlName="lugar">
+        <mat-icon matSuffix>
+          <i class="fas fa-map-marker-alt"></i>
+        </mat-icon>
+        <mat-error>
+          El campo de lugar no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <input matInput [matDatepicker]="dp1" placeholder="Fecha" [errorStateMatcher]="matcher" formControlName="fecha">
+        <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+        <mat-datepicker #dp1></mat-datepicker>
+        <mat-error>
+          El campo de fecha no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <input matInput placeholder="Caracter convocatoria" formControlName="caracter">
+        <mat-icon matSuffix>
+          <i class="fas fa-align-center"></i>
+        </mat-icon>
+        <mat-error>
+          El campo de caracter convocatoria no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <input matInput placeholder="Autor convocatoria" formControlName="autor">
+        <mat-icon matSuffix>
+          <i class="fas fa-user"></i>
+        </mat-icon>
+        <mat-error>
+          El campo de autor convocatoria no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <textarea matInput placeholder="Acuerdos adoptados" formControlName="acuerdos" rows="5"></textarea>
+        <mat-icon matSuffix>
+          <i class="fas fa-file-alt"></i>
+        </mat-icon>
+        <mat-error>
+          El campo de acuerdos adoptados no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="columns" id="columnas">
+      <mat-form-field id="columna">
+        <input matInput placeholder="Propietarios" formControlName="propietarios">
+        <mat-icon matSuffix>
+          <i class="fas fa-users"></i>
+        </mat-icon>
+        <mat-error>
+          El campo de propietarios no puede estar vacio
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="columns" *ngIf="listaBoolean.editar">
+    editar
+    <img [src]="imageToShow">
+  </div>
+  <div class="columns" *ngIf="listaBoolean.eliminar">
+    eliminar
+  </div>
+  <div class="columns">
+    <div class="column">
+      <button class="button is-light is-medium hvr-botones-usuario" id="botonVolver" (click)="enviar()">
+        Enviar
+      </button>
+      <button class="button is-light is-medium hvr-botones-usuario-cancelar" id="botonVolver" (click)="limpiar()">
+        Limpiar
+      </button>
+    </div>
+  </div>
+</div>
