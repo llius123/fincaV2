@@ -31,6 +31,9 @@ Todo:
     at callViewAction (core.js:10699)
     at execEmbeddedViewsAction (core.js:10662)
 
+  Prioridad numero 1:
+    ☐ Rehacer la base de datos la parte de actas, 2 campos una imagen y un campo tipo date
+
   Posibles mejoras :
     ☐ Hacer un cambio general de los inputs o demas cosas de bulma css a angular material
     ☐ Cambiar los estilos, del css al sass, asi para el color general de la aplicacion usaria una variable y no repetiria tanto codigo

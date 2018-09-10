@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer, SecurityContext } from '@angular/core';
 import { Router, ActivatedRoute } from '../../../../node_modules/@angular/router';
 import { AdminListaTipo, AdminListaBoolean, ModeloActas } from '../../models/model.service';
 import { ErrorStateMatcher } from "@angular/material";
@@ -14,7 +14,7 @@ import * as _moment from 'moment';
 import { FormControl, FormGroupDirective, NgForm, FormGroup, Validators } from '../../../../node_modules/@angular/forms';
 import { SqlFactura } from '../../sql/sq.factura.service';
 
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 const moment = _moment;
 
@@ -125,6 +125,7 @@ export class AdminActaComponent implements OnInit {
       case this.listaTipo.editar:
         break;
       case this.listaTipo.eliminar:
+        break;
     }
 
   }
@@ -132,4 +133,7 @@ export class AdminActaComponent implements OnInit {
   limpiar() {
     this.crearActa.reset();
   }
+
+
+
 }
