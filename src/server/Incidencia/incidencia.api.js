@@ -1,5 +1,6 @@
 var exports = module.exports = {};
-const connection = require("../connection");
+const metodos = require("../connection");
+const connection = metodos.connection;
 
 exports.nuevaIncidencia = function (app) {
     app.post("/nuevaIncidencia/:puerta/:email/:telefono/:descripcion", function (req, res) {

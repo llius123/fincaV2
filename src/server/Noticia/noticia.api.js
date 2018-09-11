@@ -1,5 +1,6 @@
 var exports = module.exports = {};
-const connection = require("../connection");
+const metodos = require("../connection");
+const connection = metodos.connection;
 
 exports.todasNoticias = function(app) {
     app.get("/todasNoticias", function(req, res) {

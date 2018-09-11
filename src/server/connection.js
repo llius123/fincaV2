@@ -7,4 +7,9 @@ var connection = mysql.createConnection({
   database: "fincav2"
 });
 
-module.exports = connection;
+var DIR = './src/server/Archivos';
+//module.exports = connection;
+module.exports = {
+  connection: connection,
+  DIR: DIR
+}

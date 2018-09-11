@@ -18,7 +18,7 @@ export class PanelUsuarioComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //this.estaLogeado();
+    this.estaLogeado();
   }
 
   estaLogeado() {

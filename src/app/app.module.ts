@@ -46,10 +46,12 @@ import { AdminFacturaComponent } from './administrador/admin-factura/admin-factu
 import { AdminIncidenciaComponent } from './administrador/admin-incidencia/admin-incidencia.component';
 import { AdminUsuarioComponent } from './administrador/admin-usuario/admin-usuario.component';
 
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 @NgModule({
   declarations: [
+    FileSelectDirective,
     AppComponent,
     LogginComponent,
     PanelUsuarioComponent,

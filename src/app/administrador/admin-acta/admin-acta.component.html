@@ -75,8 +75,11 @@
   </div>
   <div class="columns" *ngIf="listaBoolean.editar">
     editar
-    <img [src]="imageToShow" >
-    <iframe [src]="imageToShow2"></iframe>
+    <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+    <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+      Upload an Image
+    </button>
   </div>
   <div class="columns" *ngIf="listaBoolean.eliminar">
     eliminar
