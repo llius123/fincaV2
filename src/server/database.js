@@ -15,10 +15,10 @@ const subirArchivos = require("./file-uploader");
 
 process.setMaxListeners(0);
 connection.connect(function(err) {
-  if (err) throw err;
-  console.log(
-    "Conectado a Finca --> localhost:3000 || Cors enabled, mas info en README"
-  );
+    if (err) throw err;
+    console.log(
+        "Conectado a Finca --> localhost:3000 || Cors enabled, mas info en README"
+    );
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -31,7 +31,7 @@ const server = app.listen(3000);
 app.use(cors());
 
 app.get("/", function(req, res) {
-  res.send("FincaV2 API");
+    res.send("FincaV2 API");
 });
 
 //USUARIO
@@ -58,3 +58,21 @@ noticia.todasNoticias(app);
 
 //Subir archivos
 //subirArchivos.upload(app);
+const path = require("path");
+const fs = require("fs");
+const multer = require("multer");
+const DIR = metodos.DIR;
+
+var upload = multer({ dest: DIR }).single('photo');
+app.post("/file-uploader/upload", function (req, res, next) {
+  var path = '';
+  upload(req, res, function (err) {
+      if (err) {
+          // An error occurred when uploading
+          console.log(err);
+          return res.status(422).send("an Error occured")
+      }
+      path = req.file.path;
+      return res.send("Upload Completed for " + path); 
+  })
+});
