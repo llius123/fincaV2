@@ -16,7 +16,8 @@ import {
   MatSelectModule,
   MatProgressSpinnerModule,
   MatExpansionModule,
-  MatIconModule
+  MatIconModule,
+  MatButtonModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { AdminUsuarioComponent } from './administrador/admin-usuario/admin-usuar
 import { FileSelectDirective } from 'ng2-file-upload';
 
 
+
 @NgModule({
   declarations: [
     FileSelectDirective,
@@ -69,6 +71,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     AdminUsuarioComponent
   ],
   imports: [
+    MatButtonModule,
     MatIconModule,
     MatExpansionModule,
     MatProgressSpinnerModule,

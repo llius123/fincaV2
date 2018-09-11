@@ -9,6 +9,8 @@ Todo:
     Usar esto para cargar imagenes de la base de datos
       https://github.com/VadimDez/ng2-pdf-viewer
     https://www.npmjs.com/package/rxjs-compat
+    https://compodoc.app/
+
   Color base toda aplicaion
     #93e4ff
   Texto general titulo
@@ -184,6 +186,11 @@ Todo:
           https://www.npmjs.com/package/ng-file-upload
       ✔ multer @done(18-09-11 09:28)
           https://www.npmjs.com/package/multer  
+      ✘ Componente ya hecho para subir archivos @cancelled(18-09-11 10:26)
+          No se utilizarlo muy bien y la documentacion no es muy buena
+          https://www.npmjs.com/package/angular-material-fileupload 
+      ✔ connect-multiparty @done(18-09-11 10:59)
+        https://www.npmjs.com/package/connect-multiparty
       
 
 

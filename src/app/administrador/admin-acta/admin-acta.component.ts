@@ -38,7 +38,6 @@ import {
   FileUploader,
   FileSelectDirective
 } from "ng2-file-upload/ng2-file-upload";
-const URL = "http://localhost:3000/api/upload";
 
 const moment = _moment;
 
@@ -80,11 +79,6 @@ export class AdminActaComponent implements OnInit {
     private sqlFactura: SqlFactura
   ) {}
 
-  public uploader: FileUploader = new FileUploader({
-    url: URL,
-    itemAlias: "photo"
-  });
-
   matcher = new MyErrorStateMatcher();
 
   accion: string;
@@ -95,6 +89,13 @@ export class AdminActaComponent implements OnInit {
   nuevaActa: ModeloActas;
 
   crearActa: FormGroup;
+
+  URL = "http://localhost:3000/file-uploader/upload";
+
+  public uploader: FileUploader = new FileUploader({
+    url: this.URL,
+    itemAlias: "Acta"
+  });
 
   ngOnInit() {
     this.crearObjetos();
@@ -114,6 +115,8 @@ export class AdminActaComponent implements OnInit {
       alert("File uploaded successfully");
     };
   }
+
+  guardarArchivos() {}
   nuevoFormulario() {
     this.crearActa = new FormGroup({
       lugar: new FormControl(null, Validators.required),

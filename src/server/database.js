@@ -10,7 +10,8 @@ const actas = require("./Actas/actas.api");
 const factura = require("./Factura/factura.api");
 const incidencia = require("./Incidencia/incidencia.api");
 const noticia = require("./Noticia/noticia.api.js");
-const subirArchivos = require("./file-uploader")
+const subirArchivos = require("./file-uploader");
+
 
 process.setMaxListeners(0);
 connection.connect(function(err) {
@@ -22,20 +23,12 @@ connection.connect(function(err) {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
-  res.setHeader("Access-Control-Allow-Methods", "POST", "GET", "PUSH");
-  res.setHeader("Access-Control-Allow-Headers", "X-Requested-With,content-type");
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  next();
-})
 
 //create app server
 const server = app.listen(3000);
 
 //PAra activar el cors en toda la api
 app.use(cors());
-
 
 app.get("/", function(req, res) {
   res.send("FincaV2 API");
@@ -64,4 +57,4 @@ incidencia.nuevaIncidencia(app);
 noticia.todasNoticias(app);
 
 //Subir archivos
-subirArchivos.subirArchivo(app);
+subirArchivos.upload(app);
