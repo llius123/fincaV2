@@ -38,6 +38,9 @@ Todo:
     ☐ Rehacer la base de datos la parte de actas, 2 campos una imagen y un campo tipo date
 
   Posibles mejoras :
+    ☐ Subir el backend(api) a heroku
+      Osea puedo tener la api en la nube siendo la base de datos de mariadb
+      https://devcenter.heroku.com/articles/mean-apps-restful-api
     ☐ Hacer un cambio general de los inputs o demas cosas de bulma css a angular material
     ☐ Cambiar los estilos, del css al sass, asi para el color general de la aplicacion usaria una variable y no repetiria tanto codigo
     ☐ Mejorar la base de datos respecto a la parte de facturas

@@ -64,15 +64,29 @@ const multer = require("multer");
 const DIR = metodos.DIR;
 
 var upload = multer({ dest: DIR }).single('photo');
-app.post("/file-uploader/upload", function (req, res, next) {
-  var path = '';
-  upload(req, res, function (err) {
-      if (err) {
-          // An error occurred when uploading
-          console.log(err);
-          return res.status(422).send("an Error occured")
-      }
-      path = req.file.path;
-      return res.send("Upload Completed for " + path); 
-  })
+
+
+
+app.post("/file-uploader/upload", function(req, res, next) {
+    var path = '';
+
+    upload(req, res, function(err) {
+        if (err) {
+            // An error occurred when uploading
+            console.log(err);
+            return res.status(422).send("an Error occured")
+        }
+        connection.query(`insert into actas2(nombre,fecha) values(?,?)`,
+            [req.file.filename, 'test'])
+        console.log(req.file)
+        path = req.file.filename;
+        return res.send("Upload Completed for " + path);
+    })
 });
+
+app.get("/getImage", function(req, res, next) {
+    connection.query("select nombre from actas2", function(error, result) {
+        if (error) console.log(error);
+        res.end(res.json(result));
+    })
+})

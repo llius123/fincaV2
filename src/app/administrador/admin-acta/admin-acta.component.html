@@ -75,17 +75,12 @@
   </div>
   <div class="columns" *ngIf="listaBoolean.editar">
     editar
-    <div class="columns">
-      <input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
-
-      <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()">
-        Upload an Image
-      </button>
-
-    </div>
-
-    <p-fileUpload name="photo" url="http://localhost:3000/file-uploader/upload"></p-fileUpload>
-
+    <!-- File input for the file-upload plugin, with special ng2-file-upload directive called ng2FileSelect -->
+    <input type="file" name="photo" ng2FileSelect [uploader]="uploader"  />
+    <!-- button to trigger the file upload when submitted -->
+    <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+      Upload with ng-2 file uploader
+    </button>
   </div>
   <div class="columns" *ngIf="listaBoolean.eliminar">
     eliminar

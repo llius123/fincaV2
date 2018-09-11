@@ -1,4 +1,4 @@
-import { Component, OnInit, Sanitizer, SecurityContext } from "@angular/core";
+import { Component, OnInit , ElementRef, ViewChild } from "@angular/core";
 import {
   Router,
   ActivatedRoute
@@ -35,10 +35,9 @@ import {
 import { SqlFactura } from "../../sql/sq.factura.service";
 
 import {
-  FileUploader,
-  FileSelectDirective
+  FileUploader
 } from "ng2-file-upload/ng2-file-upload";
-import { DomSanitizer } from "@angular/platform-browser";
+import { HttpClient } from '../../../../node_modules/@angular/common/http';
 
 
 
@@ -80,8 +79,9 @@ export class AdminActaComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private sqlFactura: SqlFactura,
-    private sanitizer: DomSanitizer
-  ) {}
+    private http: HttpClient,
+    private el: ElementRef
+  ) { }
 
   matcher = new MyErrorStateMatcher();
 
@@ -98,7 +98,8 @@ export class AdminActaComponent implements OnInit {
 
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
-    itemAlias: "photo"
+    itemAlias: "photo",
+
   });
 
 
@@ -117,13 +118,9 @@ export class AdminActaComponent implements OnInit {
       headers: any
     ) => {
       console.log("ImageUpload:uploaded:", item, status, response);
-      alert("File uploaded successfully");
     };
   }
-  url(data: any){
-    console.log('hola')
-    return this.sanitizer.bypassSecurityTrustResourceUrl(data);
-  }
+
   nuevoFormulario() {
     this.crearActa = new FormGroup({
       lugar: new FormControl(null, Validators.required),
