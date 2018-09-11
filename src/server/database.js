@@ -57,4 +57,4 @@ incidencia.nuevaIncidencia(app);
 noticia.todasNoticias(app);
 
 //Subir archivos
-subirArchivos.upload(app);
+//subirArchivos.upload(app);

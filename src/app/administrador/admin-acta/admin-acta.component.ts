@@ -38,6 +38,9 @@ import {
   FileUploader,
   FileSelectDirective
 } from "ng2-file-upload/ng2-file-upload";
+import { DomSanitizer } from "@angular/platform-browser";
+
+
 
 const moment = _moment;
 
@@ -76,7 +79,8 @@ export class AdminActaComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private sqlFactura: SqlFactura
+    private sqlFactura: SqlFactura,
+    private sanitizer: DomSanitizer
   ) {}
 
   matcher = new MyErrorStateMatcher();
@@ -94,8 +98,9 @@ export class AdminActaComponent implements OnInit {
 
   public uploader: FileUploader = new FileUploader({
     url: this.URL,
-    itemAlias: "Acta"
+    itemAlias: "photo"
   });
+
 
   ngOnInit() {
     this.crearObjetos();
@@ -115,8 +120,10 @@ export class AdminActaComponent implements OnInit {
       alert("File uploaded successfully");
     };
   }
-
-  guardarArchivos() {}
+  url(data: any){
+    console.log('hola')
+    return this.sanitizer.bypassSecurityTrustResourceUrl(data);
+  }
   nuevoFormulario() {
     this.crearActa = new FormGroup({
       lugar: new FormControl(null, Validators.required),

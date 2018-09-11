@@ -49,6 +49,7 @@ import { AdminUsuarioComponent } from './administrador/admin-usuario/admin-usuar
 
 import { FileSelectDirective } from 'ng2-file-upload';
 
+import { FileUploadModule } from "primeng/fileupload";
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     AdminUsuarioComponent
   ],
   imports: [
+    FileUploadModule,
     MatButtonModule,
     MatIconModule,
     MatExpansionModule,
